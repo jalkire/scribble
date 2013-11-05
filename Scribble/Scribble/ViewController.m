@@ -18,9 +18,17 @@
 {
     [super viewDidLoad];
     
+    /*TESTING PARSE STUFF*/
     //PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
     //[testObject setObject:@"bar" forKey:@"foo"];
     //[testObject save];
+    
+/*  PFObject *person = [PFObject objectWithClassName:@"Person"];
+    person[@"Name"] = @"John";
+    person[@"Age"] = @21;
+    
+    [person saveInBackground];   */
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
