@@ -17,6 +17,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    //[testObject setObject:@"bar" forKey:@"foo"];
+    //[testObject save];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
