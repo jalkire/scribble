@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="205" y="-747"/>
         </scene>
-        <!--View Controller-->
+        <!--Facebook View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="FacebookViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ieP-xr-xTd"/>
                         <viewControllerLayoutGuide type="bottom" id="b5G-W0-eGG"/>
@@ -236,10 +236,10 @@
             </objects>
             <point key="canvasLocation" x="1696" y="-747"/>
         </scene>
-        <!--View Controller-->
+        <!--Draw View Controller-->
         <scene sceneID="ER7-FZ-fdE">
             <objects>
-                <viewController id="F61-v9-GLg" sceneMemberID="viewController">
+                <viewController id="F61-v9-GLg" customClass="DrawViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IHR-2O-u5m"/>
                         <viewControllerLayoutGuide type="bottom" id="Xr3-Bg-3j7"/>

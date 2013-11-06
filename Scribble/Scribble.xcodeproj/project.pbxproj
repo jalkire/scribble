@@ -25,6 +25,8 @@
 		2F349AF818234BA300316ECC /* undo-4-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F349AF518234BA300316ECC /* undo-4-512.png */; };
 		2F349AF918234BA300316ECC /* eraser.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F349AF618234BA300316ECC /* eraser.png */; };
 		2F349AFA18234BA300316ECC /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F349AF718234BA300316ECC /* pencil.png */; };
+		2F4420E71829BF6E00D483B2 /* FacebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4420E61829BF6E00D483B2 /* FacebookViewController.m */; };
+		2F4420EA1829BFC800D483B2 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4420E91829BFC800D483B2 /* DrawViewController.m */; };
 		2F7A13A018299E900062665F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A139F18299E900062665F /* Parse.framework */; };
 		2F7A13A218299F420062665F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13A118299F420062665F /* AudioToolbox.framework */; };
 		2F7A13A418299F4C0062665F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13A318299F4C0062665F /* CFNetwork.framework */; };
@@ -71,6 +73,10 @@
 		2F349AF518234BA300316ECC /* undo-4-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undo-4-512.png"; sourceTree = "<group>"; };
 		2F349AF618234BA300316ECC /* eraser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eraser.png; sourceTree = "<group>"; };
 		2F349AF718234BA300316ECC /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
+		2F4420E51829BF6E00D483B2 /* FacebookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookViewController.h; sourceTree = "<group>"; };
+		2F4420E61829BF6E00D483B2 /* FacebookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookViewController.m; sourceTree = "<group>"; };
+		2F4420E81829BFC800D483B2 /* DrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawViewController.h; sourceTree = "<group>"; };
+		2F4420E91829BFC800D483B2 /* DrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
 		2F7A139F18299E900062665F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		2F7A13A118299F420062665F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		2F7A13A318299F4C0062665F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -166,6 +172,10 @@
 				2F349AD2182331C700316ECC /* Main_iPad.storyboard */,
 				2F349AD5182331C700316ECC /* ViewController.h */,
 				2F349AD6182331C700316ECC /* ViewController.m */,
+				2F4420E81829BFC800D483B2 /* DrawViewController.h */,
+				2F4420E91829BFC800D483B2 /* DrawViewController.m */,
+				2F4420E51829BF6E00D483B2 /* FacebookViewController.h */,
+				2F4420E61829BF6E00D483B2 /* FacebookViewController.m */,
 				2F349AD8182331C700316ECC /* Images.xcassets */,
 				2F349AF518234BA300316ECC /* undo-4-512.png */,
 				2F349AF618234BA300316ECC /* eraser.png */,
@@ -305,6 +315,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4420E71829BF6E00D483B2 /* FacebookViewController.m in Sources */,
+				2F4420EA1829BFC800D483B2 /* DrawViewController.m in Sources */,
 				2F349AD7182331C700316ECC /* ViewController.m in Sources */,
 				2F349ACE182331C700316ECC /* AppDelegate.m in Sources */,
 				2F349ACA182331C700316ECC /* main.m in Sources */,
