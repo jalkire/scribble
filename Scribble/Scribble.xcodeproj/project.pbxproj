@@ -465,6 +465,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Tyler/Desktop/ClassApps/scribble/Scribble,
+					/Users/rharri05/Documents/scribble/Scribble,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
@@ -482,6 +483,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Tyler/Desktop/ClassApps/scribble/Scribble,
+					/Users/rharri05/Documents/scribble/Scribble,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
