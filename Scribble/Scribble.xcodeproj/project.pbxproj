@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ACAF333182EDD7F006101D9 /* PathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAF332182EDD7F006101D9 /* PathView.m */; };
 		2F349ABE182331C700316ECC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F349ABD182331C700316ECC /* Foundation.framework */; };
 		2F349AC0182331C700316ECC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F349ABF182331C700316ECC /* CoreGraphics.framework */; };
 		2F349AC2182331C700316ECC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F349AC1182331C700316ECC /* UIKit.framework */; };
@@ -51,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0ACAF331182EDD7F006101D9 /* PathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathView.h; sourceTree = "<group>"; };
+		0ACAF332182EDD7F006101D9 /* PathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathView.m; sourceTree = "<group>"; };
 		2F349ABA182331C700316ECC /* Scribble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scribble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F349ABD182331C700316ECC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2F349ABF182331C700316ECC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -172,6 +175,8 @@
 				2F349ACC182331C700316ECC /* AppDelegate.h */,
 				2F349ACD182331C700316ECC /* AppDelegate.m */,
 				2F349ACF182331C700316ECC /* Main_iPhone.storyboard */,
+				0ACAF331182EDD7F006101D9 /* PathView.h */,
+				0ACAF332182EDD7F006101D9 /* PathView.m */,
 				2F349AD2182331C700316ECC /* Main_iPad.storyboard */,
 				2F349AD5182331C700316ECC /* ViewController.h */,
 				2F349AD6182331C700316ECC /* ViewController.m */,
@@ -325,6 +330,7 @@
 				2F349AD7182331C700316ECC /* ViewController.m in Sources */,
 				2F4420F01829D32200D483B2 /* ParseTestingViewController.m in Sources */,
 				2F349ACE182331C700316ECC /* AppDelegate.m in Sources */,
+				0ACAF333182EDD7F006101D9 /* PathView.m in Sources */,
 				2F349ACA182331C700316ECC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +470,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					/Volumes/PENDRIVE/scribble/Scribble,
 					/Users/Tyler/Desktop/ClassApps/scribble/Scribble,
 					/Users/rharri05/Documents/scribble/Scribble,
 				);
@@ -482,6 +489,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					/Volumes/PENDRIVE/scribble/Scribble,
 					/Users/Tyler/Desktop/ClassApps/scribble/Scribble,
 					/Users/rharri05/Documents/scribble/Scribble,
 				);
