@@ -473,6 +473,7 @@
 					/Volumes/PENDRIVE/scribble/Scribble,
 					/Users/Tyler/Desktop/ClassApps/scribble/Scribble,
 					/Users/rharri05/Documents/scribble/Scribble,
+					/Users/Rebecca/Desktop/scribble/Scribble/,
 					/Users/krusse03/Desktop/Scribble/scribble/Scribble/Scribble/scribble/Scribble,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -493,6 +494,7 @@
 					/Volumes/PENDRIVE/scribble/Scribble,
 					/Users/Tyler/Desktop/ClassApps/scribble/Scribble,
 					/Users/rharri05/Documents/scribble/Scribble,
+					/Users/Rebecca/Desktop/scribble/Scribble/,
 					/Users/krusse03/Desktop/Scribble/scribble/Scribble/Scribble/scribble/Scribble,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
