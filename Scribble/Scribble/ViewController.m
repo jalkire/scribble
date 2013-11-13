@@ -41,6 +41,7 @@
     UIImage* image1 = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     NSData *imageData = UIImagePNGRepresentation(image1);
+    [self uploadImage:imageData];
 }
 - (void)uploadImage:(NSData *)imageData
 {
@@ -70,17 +71,6 @@
         }
     }];
 }
-
-
-
-
-
-
-
-
-    }];
-}
-
 
 
 
