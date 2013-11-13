@@ -41,6 +41,15 @@
     [self.pathView.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage* image1 = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    
+    //Crop image to get rid of bottom toolbar
+    CGRect rect = CGRectMake(0, 0, self.pathView.bounds.size.width, self.pathView.bounds.size.height-45);
+    CGImageRef imageRef = CGImageCreateWithImageInRect([image1 CGImage], rect);
+    UIImage *cropped = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
+    image1 = cropped;
+    
+    //Save image to cloud
     NSData *imageData = UIImagePNGRepresentation(image1);
     [self uploadImage:imageData :sender];
 }

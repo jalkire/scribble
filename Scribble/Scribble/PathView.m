@@ -19,6 +19,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        //frame.size.height = 0.2;          DIDN'T WORK
     }
     return self;
 }

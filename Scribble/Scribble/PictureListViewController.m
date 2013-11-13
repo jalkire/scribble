@@ -80,7 +80,7 @@
         [self.scrollView addSubview:PicturesListView];
         
         //put gap between photos
-        originY = originY + PicturesListView.frame.size.width + 20;
+        originY = originY + userPic.frame.size.height + 20;
     }
     
     //set scroll view size
