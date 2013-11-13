@@ -34,6 +34,49 @@
         [self.pathView endPoint:point];
     }
 }
+- (IBAction)doneButtonTapped:(UIButton*)sender
+{
+    UIGraphicsBeginImageContext(self.pathView.bounds.size);
+    [self.pathView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage* image1 = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSData *imageData = UIImagePNGRepresentation(image1);
+    [self uploadImage:imageData];
+}
+- (void)uploadImage:(NSData *)imageData
+{
+    PFFile *imageFile = [PFFile fileWithName:@"Image.png" data:imageData];
+    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+    {
+        if (!error)
+        {
+            PFObject *userPhoto = [PFObject objectWithClassName:@"UserPhoto"];
+            [userPhoto setObject:imageFile forKey:@"imageFile"];
+            
+            PFUser *user = [PFUser currentUser];
+            [userPhoto setObject:user forKey:@"user"];
+            
+            [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+            {
+                if (!error)
+                {
+                 //   [self refresh:nil];
+                }
+                else
+                {
+                    NSLog(@"Error: %@ %@", error, [error userInfo]);
+                }
+            }];
+
+        }
+    }];
+}
+
+
+
+
+
+
 
 - (void)viewDidLoad
 {

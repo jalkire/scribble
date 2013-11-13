@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4yM-9w-PfT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4yM-9w-PfT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Table View Controller - Root View Controller-->
@@ -261,7 +261,11 @@
                                     <barButtonItem image="pencil.png" id="B2W-rm-ja4"/>
                                     <barButtonItem image="eraser.png" style="plain" id="BWH-6Q-lTQ"/>
                                     <barButtonItem width="60" style="plain" systemItem="fixedSpace" id="HI2-Q8-uFe"/>
-                                    <barButtonItem systemItem="done" id="5ya-al-pXE"/>
+                                    <barButtonItem systemItem="done" id="5ya-al-pXE">
+                                        <connections>
+                                            <action selector="doneButtonTapped:" destination="F61-v9-GLg" id="glx-M5-8uh"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
