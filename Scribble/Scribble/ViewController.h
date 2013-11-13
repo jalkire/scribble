@@ -11,4 +11,6 @@
 
 @interface ViewController : UIViewController
 
+- (void)uploadImage:(NSData *)imageData;
+
 @end
