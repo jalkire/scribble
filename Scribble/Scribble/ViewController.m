@@ -34,6 +34,16 @@
         [self.pathView endPoint:point];
     }
 }
+- (IBAction)doneButtonTapped:(UIButton*)sender
+{
+    
+    UIGraphicsBeginImageContext(self.pathView.bounds.size);
+    [self.pathView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage* image1 = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSData *imageData = UIImagePNGRepresentation(image1);
+    
+}
 
 - (void)viewDidLoad
 {
