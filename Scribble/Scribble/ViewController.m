@@ -42,11 +42,11 @@
     UIImage* image1 = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     NSData *imageData = UIImagePNGRepresentation(image1);
-    [self uploadImage:imageData];
+    [self uploadImage:imageData :sender];
 }
 
 
-- (void)uploadImage:(NSData *)imageData
+- (void)uploadImage:(NSData *)imageData :(id)sender
 {
     PFFile *imageFile = [PFFile fileWithName:@"Image.png" data:imageData];
     [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
@@ -64,6 +64,7 @@
                 if (!error)
                 {
                  //   [self refresh:nil];
+                    [self performSegueWithIdentifier:@"dismissDrawView" sender:sender];
                 }
                 else
                 {
@@ -74,9 +75,6 @@
         }
     }];
 }
-
-
-
 
 
 

@@ -21,6 +21,10 @@
 //@synthesize wallObjectsArray = _wallObjectsArray;
 //@synthesize scrollView = _scrollView;
 
+- (IBAction)unwindAction:(UIStoryboardSegue*)unwindSegue
+{
+    [self getPictures];
+}
 
 -(void)getPictures
 {

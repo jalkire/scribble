@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4yM-9w-PfT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4yM-9w-PfT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller - Root View Controller-->
+        <!--Table View Controller - Chatrooms-->
         <scene sceneID="rEo-UE-GdG">
             <objects>
                 <tableViewController id="Nia-8Z-Rdg" sceneMemberID="viewController">
@@ -15,35 +15,8 @@
                         <sections>
                             <tableViewSection id="p7b-d2-nW5">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="YJM-LG-5Sr" detailTextLabel="SSm-9r-EVe" style="IBUITableViewCellStyleValue1" id="UU8-9m-8yZ">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UU8-9m-8yZ" id="I50-Js-frG">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Chatroom 001" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YJM-LG-5Sr">
-                                                    <rect key="frame" x="15" y="11" width="110" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="0 members" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SSm-9r-EVe">
-                                                    <rect key="frame" x="198" y="11" width="87" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="F61-v9-GLg" kind="push" id="RRt-tq-J4V"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Cf8-7y-FDa" detailTextLabel="fW7-To-9Aq" style="IBUITableViewCellStyleValue1" id="BBq-3X-G0w">
-                                        <rect key="frame" x="0.0" y="108" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BBq-3X-G0w" id="m63-iE-DlP">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
@@ -70,7 +43,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="4Io-7Q-qEh" detailTextLabel="YoB-KI-HnK" style="IBUITableViewCellStyleValue1" id="rKE-Ha-jhX">
-                                        <rect key="frame" x="0.0" y="152" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="108" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rKE-Ha-jhX" id="Cod-8C-o6Y">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -97,7 +70,9 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="v54-P8-Lrx"/>
+                    <navigationItem key="navigationItem" title="Chatrooms" id="v54-P8-Lrx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="g7A-Yr-4Ls"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qR5-nb-nlq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIx-gp-L33" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1302" y="-747"/>
+            <point key="canvasLocation" x="574" y="37"/>
         </scene>
         <!--Picture List View Controller-->
         <scene sceneID="ofA-yr-AEI">
@@ -225,14 +200,18 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V7s-Tc-XVz">
-                                <rect key="frame" x="0.0" y="63" width="320" height="461"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AkA-gp-jz2">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Draw" width="290" style="done" id="Flh-cH-o3O"/>
+                                    <barButtonItem title="Draw" width="290" style="done" id="Flh-cH-o3O">
+                                        <connections>
+                                            <segue destination="F61-v9-GLg" kind="modal" id="11Y-Xo-Dwl"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -245,7 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YlK-8i-d1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1696" y="-747"/>
+            <point key="canvasLocation" x="1216" y="-747"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ER7-FZ-fdE">
@@ -284,16 +263,18 @@
                     <navigationItem key="navigationItem" id="hXH-Hn-5L2"/>
                     <connections>
                         <outlet property="pathView" destination="Ras-ah-RGQ" id="Cjt-bl-21G"/>
+                        <segue destination="zwE-r4-RRY" kind="unwind" identifier="dismissDrawView" unwindAction="unwindAction:" id="f8n-hN-GSa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAa-bb-CCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zwE-r4-RRY" userLabel="Exit" sceneMemberID="exit"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="CJm-VG-LK8">
                     <connections>
                         <action selector="didPan:" destination="F61-v9-GLg" id="OQm-oW-0D4"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1302" y="37"/>
+            <point key="canvasLocation" x="1646" y="-747"/>
         </scene>
     </scenes>
     <resources>
