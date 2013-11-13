@@ -34,6 +34,7 @@
         [self.pathView endPoint:point];
     }
 }
+
 - (IBAction)doneButtonTapped:(UIButton*)sender
 {
     UIGraphicsBeginImageContext(self.pathView.bounds.size);
@@ -43,6 +44,8 @@
     NSData *imageData = UIImagePNGRepresentation(image1);
     [self uploadImage:imageData];
 }
+
+
 - (void)uploadImage:(NSData *)imageData
 {
     PFFile *imageFile = [PFFile fileWithName:@"Image.png" data:imageData];
@@ -53,8 +56,8 @@
             PFObject *userPhoto = [PFObject objectWithClassName:@"UserPhoto"];
             [userPhoto setObject:imageFile forKey:@"imageFile"];
             
-            PFUser *user = [PFUser currentUser];
-            [userPhoto setObject:user forKey:@"user"];
+            //PFUser *user = [PFUser currentUser];
+            //[userPhoto setObject:user forKey:@"user"];
             
             [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
             {
