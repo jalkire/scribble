@@ -39,6 +39,7 @@
 		2F7A13AE18299F9C0062665F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13AD18299F9C0062665F /* Security.framework */; };
 		2F7A13B018299FA50062665F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13AF18299FA50062665F /* StoreKit.framework */; };
 		2F7A13B218299FB20062665F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13B118299FB20062665F /* SystemConfiguration.framework */; };
+		83EE3D8B1833145F005B0E77 /* PictureListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EE3D891833145F005B0E77 /* PictureListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		2F7A13AD18299F9C0062665F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		2F7A13AF18299FA50062665F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2F7A13B118299FB20062665F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		83EE3D891833145F005B0E77 /* PictureListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureListViewController.m; sourceTree = "<group>"; };
+		83EE3D8A1833145F005B0E77 /* PictureListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureListViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +184,8 @@
 				2F349AD5182331C700316ECC /* ViewController.h */,
 				2F349AD6182331C700316ECC /* ViewController.m */,
 				2F4420EE1829D32200D483B2 /* ParseTestingViewController.h */,
+				83EE3D891833145F005B0E77 /* PictureListViewController.m */,
+				83EE3D8A1833145F005B0E77 /* PictureListViewController.h */,
 				2F4420EF1829D32200D483B2 /* ParseTestingViewController.m */,
 				2F4420E81829BFC800D483B2 /* DrawViewController.h */,
 				2F4420E91829BFC800D483B2 /* DrawViewController.m */,
@@ -330,6 +335,7 @@
 				2F349AD7182331C700316ECC /* ViewController.m in Sources */,
 				2F4420F01829D32200D483B2 /* ParseTestingViewController.m in Sources */,
 				2F349ACE182331C700316ECC /* AppDelegate.m in Sources */,
+				83EE3D8B1833145F005B0E77 /* PictureListViewController.m in Sources */,
 				0ACAF333182EDD7F006101D9 /* PathView.m in Sources */,
 				2F349ACA182331C700316ECC /* main.m in Sources */,
 			);
@@ -474,6 +480,7 @@
 					/Users/Tyler/Desktop/ClassApps/scribble/Scribble,
 					/Users/rharri05/Documents/scribble/Scribble,
 					/Users/Rebecca/Desktop/scribble/Scribble,
+					/Users/jalkire/Desktop/scribble/Scribble,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
@@ -494,6 +501,7 @@
 					/Users/Tyler/Desktop/ClassApps/scribble/Scribble,
 					/Users/rharri05/Documents/scribble/Scribble,
 					/Users/Rebecca/Desktop/scribble/Scribble,
+					/Users/jalkire/Desktop/scribble/Scribble,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
