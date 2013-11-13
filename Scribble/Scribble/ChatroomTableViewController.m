@@ -1,19 +1,35 @@
 //
-//  ParseTestingViewController.m
+//  ChatroomTableViewController.m
 //  Scribble
 //
-//  Created by Tyler Dahl on 11/5/13.
+//  Created by Tyler Dahl on 11/13/13.
 //  Copyright (c) 2013 SketchySix. All rights reserved.
 //
 
-#import "ParseTestingViewController.h"
+#import "ChatroomTableViewController.h"
 
-@interface ParseTestingViewController ()
-@property int rows;
-@property NSArray *people;
+@interface ChatroomTableViewController ()
+@property NSArray *chatrooms;
+
 @end
 
-@implementation ParseTestingViewController
+@implementation ChatroomTableViewController
+
+- (void)refreshChatrooms: (NSArray*) chatrooms error: (NSError*) error
+{
+    if (!error)
+    {
+        self.chatrooms = chatrooms;
+        [self.tableView reloadData];
+    }
+}
+
+- (IBAction)unwindAction:(UIStoryboardSegue*)unwindSegue
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Chatroom"];
+    [query findObjectsInBackgroundWithTarget:self
+                                    selector:@selector(refreshChatrooms:error:)];
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -24,22 +40,13 @@
     return self;
 }
 
-- (void)getPeople: (NSArray*) people error: (NSError*) error
-{
-    if (!error)
-    {
-        self.people = people;
-        [self.tableView reloadData];
-    }
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     PFQuery *query = [PFQuery queryWithClassName:@"Chatroom"];
     [query findObjectsInBackgroundWithTarget:self
-                                    selector:@selector(getPeople:error:)];
+                                    selector:@selector(refreshChatrooms:error:)];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -64,7 +71,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return self.people.count;
+    return self.chatrooms.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,10 +80,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    PFObject *person;
-    person = self.people[indexPath.row];
+    PFObject *chatroom;
+    chatroom = self.chatrooms[indexPath.row];
     
-    cell.textLabel.text = person[@"Name"];
+    cell.textLabel.text = chatroom[@"Name"];
+    cell.detailTextLabel.text = @"0 members";
     
     return cell;
 }

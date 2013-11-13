@@ -29,6 +29,8 @@
 		2F4420E71829BF6E00D483B2 /* FacebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4420E61829BF6E00D483B2 /* FacebookViewController.m */; };
 		2F4420EA1829BFC800D483B2 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4420E91829BFC800D483B2 /* DrawViewController.m */; };
 		2F4420F01829D32200D483B2 /* ParseTestingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4420EF1829D32200D483B2 /* ParseTestingViewController.m */; };
+		2F4421591833708600D483B2 /* AddChatroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4421581833708600D483B2 /* AddChatroomViewController.m */; };
+		2F44215C1833736800D483B2 /* ChatroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F44215B1833736800D483B2 /* ChatroomTableViewController.m */; };
 		2F7A13A018299E900062665F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A139F18299E900062665F /* Parse.framework */; };
 		2F7A13A218299F420062665F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13A118299F420062665F /* AudioToolbox.framework */; };
 		2F7A13A418299F4C0062665F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13A318299F4C0062665F /* CFNetwork.framework */; };
@@ -84,6 +86,10 @@
 		2F4420E91829BFC800D483B2 /* DrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
 		2F4420EE1829D32200D483B2 /* ParseTestingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseTestingViewController.h; sourceTree = "<group>"; };
 		2F4420EF1829D32200D483B2 /* ParseTestingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseTestingViewController.m; sourceTree = "<group>"; };
+		2F4421571833708600D483B2 /* AddChatroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddChatroomViewController.h; sourceTree = "<group>"; };
+		2F4421581833708600D483B2 /* AddChatroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddChatroomViewController.m; sourceTree = "<group>"; };
+		2F44215A1833736800D483B2 /* ChatroomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatroomTableViewController.h; sourceTree = "<group>"; };
+		2F44215B1833736800D483B2 /* ChatroomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatroomTableViewController.m; sourceTree = "<group>"; };
 		2F7A139F18299E900062665F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		2F7A13A118299F420062665F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		2F7A13A318299F4C0062665F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -183,6 +189,10 @@
 				2F349AD2182331C700316ECC /* Main_iPad.storyboard */,
 				2F349AD5182331C700316ECC /* ViewController.h */,
 				2F349AD6182331C700316ECC /* ViewController.m */,
+				2F4421571833708600D483B2 /* AddChatroomViewController.h */,
+				2F4421581833708600D483B2 /* AddChatroomViewController.m */,
+				2F44215A1833736800D483B2 /* ChatroomTableViewController.h */,
+				2F44215B1833736800D483B2 /* ChatroomTableViewController.m */,
 				2F4420EE1829D32200D483B2 /* ParseTestingViewController.h */,
 				2F4420EF1829D32200D483B2 /* ParseTestingViewController.m */,
 				83EE3D8A1833145F005B0E77 /* PictureListViewController.h */,
@@ -336,8 +346,10 @@
 				2F4420F01829D32200D483B2 /* ParseTestingViewController.m in Sources */,
 				2F349ACE182331C700316ECC /* AppDelegate.m in Sources */,
 				83EE3D8B1833145F005B0E77 /* PictureListViewController.m in Sources */,
+				2F44215C1833736800D483B2 /* ChatroomTableViewController.m in Sources */,
 				0ACAF333182EDD7F006101D9 /* PathView.m in Sources */,
 				2F349ACA182331C700316ECC /* main.m in Sources */,
+				2F4421591833708600D483B2 /* AddChatroomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
