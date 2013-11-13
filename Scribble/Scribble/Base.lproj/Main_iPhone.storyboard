@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4yM-9w-PfT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4yM-9w-PfT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Table View Controller - Root View Controller-->
@@ -42,11 +42,11 @@
                                             <segue destination="F61-v9-GLg" kind="push" id="RRt-tq-J4V"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Cf8-7y-FDa" detailTextLabel="fW7-To-9Aq" style="IBUITableViewCellStyleValue1" id="BBq-3X-G0w">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Cf8-7y-FDa" detailTextLabel="fW7-To-9Aq" style="IBUITableViewCellStyleValue1" id="BBq-3X-G0w">
                                         <rect key="frame" x="0.0" y="108" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BBq-3X-G0w" id="m63-iE-DlP">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Math Help!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cf8-7y-FDa">
@@ -57,7 +57,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="3 members" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fW7-To-9Aq">
-                                                    <rect key="frame" x="218" y="11" width="87" height="21"/>
+                                                    <rect key="frame" x="198" y="11" width="87" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,6 +65,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ntf-xi-I3L" kind="push" id="WgB-48-Mff"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="4Io-7Q-qEh" detailTextLabel="YoB-KI-HnK" style="IBUITableViewCellStyleValue1" id="rKE-Ha-jhX">
                                         <rect key="frame" x="0.0" y="152" width="320" height="44"/>
@@ -209,10 +212,10 @@
             </objects>
             <point key="canvasLocation" x="1302" y="-747"/>
         </scene>
-        <!--View Controller-->
+        <!--Picture List View Controller-->
         <scene sceneID="ofA-yr-AEI">
             <objects>
-                <viewController id="ntf-xi-I3L" sceneMemberID="viewController">
+                <viewController id="ntf-xi-I3L" customClass="PictureListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RK2-fH-oEQ"/>
                         <viewControllerLayoutGuide type="bottom" id="huG-bH-KF2"/>
@@ -235,6 +238,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="1fv-P8-Udk"/>
+                    <connections>
+                        <outlet property="scrollView" destination="V7s-Tc-XVz" id="WvY-aC-7Jf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YlK-8i-d1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
