@@ -74,8 +74,7 @@
     
     //Save image to cloud
     NSData *imageData = UIImagePNGRepresentation(image1);
-    [self uploadImage:imageData];
-    
+    [self uploadImage:imageData :sender];
 }
 
 
