@@ -64,7 +64,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q54-P1-eba" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FJG-fS-9ET" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="969" y="-1463"/>
+            <point key="canvasLocation" x="1216" y="37"/>
         </scene>
         <!--Chatroom Table View Controller - Chatrooms-->
         <scene sceneID="rEo-UE-GdG">

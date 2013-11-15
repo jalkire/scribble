@@ -11,15 +11,13 @@
 
 @interface PictureListViewController ()
 
-@property NSArray *wallObjectsArray;
+@property NSArray *drawingObjectsArray;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
 @implementation PictureListViewController
 
-//@synthesize wallObjectsArray = _wallObjectsArray;
-//@synthesize scrollView = _scrollView;
 
 - (IBAction)unwindAction:(UIStoryboardSegue*)unwindSegue
 {
@@ -38,8 +36,8 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         //if successful, clear array and then add the drawings too it
         if (!error) {
-            self.wallObjectsArray = nil;
-            self.wallObjectsArray = [[NSArray alloc] initWithArray:objects];
+            self.drawingObjectsArray = nil;
+            self.drawingObjectsArray = [[NSArray alloc] initWithArray:objects];
             
             //go to picture loading method
             [self loadPictures];
@@ -68,19 +66,41 @@
     int originY = 0;
     
     //go through array of photos and add each to scroll view
-    for (PFObject *wallObject in self.wallObjectsArray){
-        UIView *PicturesListView = [[UIView alloc] initWithFrame:CGRectMake(10, originY, self.view.frame.size.width , 900)];
+    for (PFObject *drawingObject in self.drawingObjectsArray){
+        //Make  uiview object that will be put in scroll view
+        UIView *PicturesListView = [[UIView alloc] initWithFrame:CGRectMake(0, originY, self.view.frame.size.width , 900)];
         
-        PFFile *pic = (PFFile *)[wallObject objectForKey:@"imageFile"];
+        //take the picture
+        PFFile *pic = (PFFile *)[drawingObject objectForKey:@"imageFile"];
+        
+        //and put it in a frame, reducing its size and centering
         UIImageView *userPic = [[UIImageView alloc] initWithImage:[UIImage imageWithData:pic.getData]];
-        userPic.frame = CGRectMake(0, 0, PicturesListView.frame.size.width, userPic.frame.size.height);
+        userPic.frame = CGRectMake(PicturesListView.frame.size.width/6, 15, PicturesListView.frame.size.width/1.5, userPic.frame.size.height/2);
+
+        //add picture to uiview
         [PicturesListView addSubview:userPic];
+
+        //take the date and time that the picture was uploaded at
+        NSDate *creationDate = drawingObject.createdAt;
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"h:mm a EEEE"];
         
+        //and render it in top right corner of photo
         
+        UILabel *timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-80, 0, PicturesListView.frame.size.width,15)];
+        //ready to take username from picture object: timeStamp.text = [NSString stringWithFormat:@"%@, %@", [drawingObject objectForKey:@"user"], [df stringFromDate:creationDate]];
+        
+        timeStamp.text = [NSString stringWithFormat:@"%@", [df stringFromDate:creationDate]];
+        timeStamp.font = [UIFont italicSystemFontOfSize:9];
+
+        //add the timestamp to uiview
+        [PicturesListView addSubview:timeStamp];
+        
+        //add the uiview to the scrollview
         [self.scrollView addSubview:PicturesListView];
         
         //put gap between photos
-        originY = originY + userPic.frame.size.height + 20;
+        originY = originY + userPic.frame.size.height + 40;
     }
     
     //set scroll view size
