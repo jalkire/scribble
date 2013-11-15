@@ -493,6 +493,7 @@
 					/Users/rharri05/Documents/scribble/Scribble,
 					/Users/Rebecca/Desktop/scribble/Scribble,
 					/Users/jalkire/Desktop/scribble/Scribble,
+					/Users/krusse03/Desktop/Scribble/scribble,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
@@ -514,6 +515,7 @@
 					/Users/rharri05/Documents/scribble/Scribble,
 					/Users/Rebecca/Desktop/scribble/Scribble,
 					/Users/jalkire/Desktop/scribble/Scribble,
+					/Users/krusse03/Desktop/Scribble/scribble,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
