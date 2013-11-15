@@ -62,11 +62,11 @@
     {
         if (!error)
         {
-            PFObject *userPhoto = [PFObject objectWithClassName:@"UserPhoto"];
+            PFObject *userPhoto = [PFObject objectWithClassName:@"UserDrawing"];
             [userPhoto setObject:imageFile forKey:@"imageFile"];
             
-            //PFUser *user = [PFUser currentUser];
-            //[userPhoto setObject:user forKey:@"user"];
+            PFUser *user = [PFUser currentUser];
+            [userPhoto setObject:user forKey:@"user"];
             
             [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
             {
