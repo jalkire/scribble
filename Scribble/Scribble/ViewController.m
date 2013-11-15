@@ -57,24 +57,36 @@
         [self.pathView endPoint:point];
     }
 }
+
 - (IBAction)doneButtonTapped:(UIButton*)sender
 {
     UIGraphicsBeginImageContext(self.pathView.bounds.size);
     [self.pathView.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage* image1 = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    
+    //Crop image to get rid of bottom toolbar
+    CGRect rect = CGRectMake(0, 0, self.pathView.bounds.size.width, self.pathView.bounds.size.height-45);
+    CGImageRef imageRef = CGImageCreateWithImageInRect([image1 CGImage], rect);
+    UIImage *cropped = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
+    image1 = cropped;
+    
+    //Save image to cloud
     NSData *imageData = UIImagePNGRepresentation(image1);
     [self uploadImage:imageData];
     
 }
-- (void)uploadImage:(NSData *)imageData
+
+
+- (void)uploadImage:(NSData *)imageData :(id)sender
 {
     PFFile *imageFile = [PFFile fileWithName:@"Image.png" data:imageData];
     [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
     {
         if (!error)
         {
-            PFObject *userPhoto = [PFObject objectWithClassName:@"UserPhoto"];
+            PFObject *userPhoto = [PFObject objectWithClassName:@"UserDrawing"];
             [userPhoto setObject:imageFile forKey:@"imageFile"];
             
             PFUser *user = [PFUser currentUser];
@@ -85,6 +97,7 @@
                 if (!error)
                 {
                  //   [self refresh:nil];
+                    [self performSegueWithIdentifier:@"dismissDrawView" sender:sender];
                 }
                 else
                 {
@@ -95,9 +108,6 @@
         }
     }];
 }
-
-
-
 
 
 
