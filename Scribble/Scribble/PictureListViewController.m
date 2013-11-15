@@ -85,6 +85,10 @@
     
     //set scroll view size
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, originY);
+    
+    //scroll to bottom
+    CGPoint bottomOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.bounds.size.height);
+    [self.scrollView setContentOffset:bottomOffset animated:YES];
 }
 
 
