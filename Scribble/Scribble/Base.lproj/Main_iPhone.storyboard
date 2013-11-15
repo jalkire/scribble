@@ -256,7 +256,11 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem image="undo-4-512.png" id="JbR-8l-3rw"/>
+                                    <barButtonItem image="undo-4-512.png" id="JbR-8l-3rw">
+                                        <connections>
+                                            <action selector="undo:" destination="F61-v9-GLg" id="Ynh-gp-66L"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="65" style="plain" systemItem="fixedSpace" id="XIU-yb-125"/>
                                     <barButtonItem image="pencil.png" id="B2W-rm-ja4"/>
                                     <barButtonItem image="eraser.png" style="plain" id="BWH-6Q-lTQ"/>

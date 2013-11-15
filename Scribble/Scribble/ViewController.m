@@ -14,6 +14,29 @@
 @end
 
 @implementation ViewController
+
+/*- (IBAction)reset:(id)sender              //total erase of drawing screen
+
+{
+    for (UIBezierPath *path in self.pathView.oldpaths) {
+        [path removeAllPoints];
+    }
+    [self.pathView setNeedsDisplay];
+}
+*/
+
+- (IBAction)undo:(id)sender
+{
+
+    UIBezierPath *path  = [self.pathView.oldpaths lastObject];
+    [path removeAllPoints];
+    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.pathView.oldpaths];
+    [tempArray removeLastObject];
+    self.pathView.oldpaths = [NSArray arrayWithArray:tempArray];
+    [self.pathView setNeedsDisplay];
+   
+}
+
 - (IBAction)didPan:(UIPanGestureRecognizer *)sender
 {
     CGPoint point = [sender locationInView:self.pathView];
@@ -42,6 +65,7 @@
     UIGraphicsEndImageContext();
     NSData *imageData = UIImagePNGRepresentation(image1);
     [self uploadImage:imageData];
+    
 }
 - (void)uploadImage:(NSData *)imageData
 {

@@ -470,6 +470,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					/Users/rpatel28/Desktop/Scribblemock/Scribble/,
 					/Volumes/PENDRIVE/scribble/Scribble,
 					/Users/Tyler/Desktop/ClassApps/scribble/Scribble,
 					/Users/rharri05/Documents/scribble/Scribble,
@@ -491,6 +492,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					/Users/rpatel28/Desktop/Scribblemock/Scribble/,
 					/Volumes/PENDRIVE/scribble/Scribble,
 					/Users/Tyler/Desktop/ClassApps/scribble/Scribble,
 					/Users/rharri05/Documents/scribble/Scribble,
