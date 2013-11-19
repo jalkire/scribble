@@ -488,12 +488,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/PENDRIVE/scribble/Scribble,
-					/Users/Tyler/Desktop/ClassApps/scribble/Scribble,
-					/Users/rharri05/Documents/scribble/Scribble,
-					/Users/Rebecca/Desktop/scribble/Scribble,
-					/Users/jalkire/Desktop/scribble/Scribble,
-					/Users/krusse03/Desktop/Scribble/scribble,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
@@ -510,12 +505,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Volumes/PENDRIVE/scribble/Scribble,
-					/Users/Tyler/Desktop/ClassApps/scribble/Scribble,
-					/Users/rharri05/Documents/scribble/Scribble,
-					/Users/Rebecca/Desktop/scribble/Scribble,
-					/Users/jalkire/Desktop/scribble/Scribble,
-					/Users/krusse03/Desktop/Scribble/scribble,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";

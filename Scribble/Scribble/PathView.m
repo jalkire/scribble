@@ -9,7 +9,8 @@
 #import "PathView.h"
 @interface PathView ()
 @property UIBezierPath *path;
-@property NSArray *oldpaths;
+@property NSDictionary *oldpaths;
+
 @end
 
 @implementation PathView
@@ -42,9 +43,9 @@
     [self setNeedsDisplay];
     
     if (!self.oldpaths)
-        self.oldpaths = [[NSArray alloc] init];
+        self.oldpaths = [[NSDictionary alloc] init];
     
-    self.oldpaths = [self.oldpaths arrayByAddingObject:self.path];
+    self.oldpaths = @{"path":[self.oldpaths DictionaryByAddingObject:self.path], @"color": self.penColor};
         
 }
 
@@ -59,7 +60,7 @@
     for (UIBezierPath *path in self.oldpaths)
     {
         CGContextSetLineWidth(context, 4);
-        [[UIColor blackColor] setStroke];
+        //[[UIColor blackColor] setStroke];
         
         CGContextBeginPath(context);
         CGContextAddPath(context, path.CGPath);
@@ -67,7 +68,7 @@
     }
 
     CGContextSetLineWidth(context, 4);
-    [[UIColor blackColor] setStroke];
+    [self.penColor setStroke];
     
     CGContextBeginPath(context);
     CGContextAddPath(context,self.path.CGPath);

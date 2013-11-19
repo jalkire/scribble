@@ -54,6 +54,10 @@
     [self uploadImage:imageData :sender];
 }
 
+- (IBAction)eraseButtonTapped:(UIButton*)sender
+{
+    self.pathView.penColor = [UIColor whiteColor];
+}
 
 - (void)uploadImage:(NSData *)imageData :(id)sender
 {

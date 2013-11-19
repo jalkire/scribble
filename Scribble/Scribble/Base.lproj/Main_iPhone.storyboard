@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4yM-9w-PfT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4yM-9w-PfT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Add Chatroom View Controller-->
@@ -308,7 +308,11 @@
                                     <barButtonItem image="undo-4-512.png" id="JbR-8l-3rw"/>
                                     <barButtonItem width="65" style="plain" systemItem="fixedSpace" id="XIU-yb-125"/>
                                     <barButtonItem image="pencil.png" id="B2W-rm-ja4"/>
-                                    <barButtonItem image="eraser.png" style="plain" id="BWH-6Q-lTQ"/>
+                                    <barButtonItem image="eraser.png" style="plain" id="BWH-6Q-lTQ">
+                                        <connections>
+                                            <action selector="eraseButtonTapped:" destination="F61-v9-GLg" id="84T-kR-02S"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="60" style="plain" systemItem="fixedSpace" id="HI2-Q8-uFe"/>
                                     <barButtonItem systemItem="done" id="5ya-al-pXE">
                                         <connections>

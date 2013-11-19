@@ -13,4 +13,6 @@
 - (void) addPath: (CGPoint) point;
 - (void) endPoint: (CGPoint) finalPoint;
 
+@property UIColor *penColor;
+
 @end
