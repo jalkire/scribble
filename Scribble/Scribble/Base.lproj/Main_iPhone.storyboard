@@ -159,7 +159,6 @@
         <!--Facebook View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <viewController id="vXZ-lx-hvc" customClass="FacebookViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ieP-xr-xTd"/>
@@ -239,13 +238,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="205" y="37"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tuC-IA-8S5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zIx-gp-L33" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="EkF-OM-bmn" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wei-7R-hoA"/>
@@ -299,6 +298,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="nu7-Bx-uuY"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zIx-gp-L33" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="574" y="37"/>
         </scene>
