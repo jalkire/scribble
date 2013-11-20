@@ -27,7 +27,7 @@
 -(void)getPictures
 {
     //make the query for the drawing class
-    PFQuery *query = [PFQuery queryWithClassName:@"UserPhoto"];
+    PFQuery *query = [PFQuery queryWithClassName:@"UserDrawing"];
     
     //order the query
     [query orderByAscending:@"createdAt"];
@@ -83,14 +83,24 @@
         //take the date and time that the picture was uploaded at
         NSDate *creationDate = drawingObject.createdAt;
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        [df setDateFormat:@"h:mm a EEEE"];
+        [df setDateFormat:@"EEE, dd MMM yy HH:mm:ss VVVV"];
         
-        //and render it in top right corner of photo
+        //set stamp position to top right corner of photo
+        UILabel *timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-120, 0, PicturesListView.frame.size.width,15)];
         
-        UILabel *timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-80, 0, PicturesListView.frame.size.width,15)];
-        //ready to take username from picture object: timeStamp.text = [NSString stringWithFormat:@"%@, %@", [drawingObject objectForKey:@"user"], [df stringFromDate:creationDate]];
+        //query for current drawing
+        PFQuery *userQuery = [PFQuery queryWithClassName:@"UserDrawing"];
+        [userQuery includeKey:@"user"];
+        [userQuery whereKey:@"objectId" equalTo:drawingObject.objectId];
+        PFObject *drawObject = [userQuery getFirstObject];
+    
+        //get user object associated with drawing
+        PFUser *photoUser = [drawObject objectForKey:@"user"];
         
-        timeStamp.text = [NSString stringWithFormat:@"%@", [df stringFromDate:creationDate]];
+        //set stamp text to have user and datetime and format it
+        //timeStamp.text = [NSString stringWithFormat:@"%@, %@", photoUser.username, [df stringFromDate:creationDate]];
+        timeStamp.text = [NSString stringWithFormat:@"%@, %@", photoUser.username, [self relativeDate:creationDate]];
+
         timeStamp.font = [UIFont italicSystemFontOfSize:9];
 
         //add the timestamp to uiview
@@ -111,6 +121,30 @@
     [self.scrollView setContentOffset:bottomOffset animated:YES];
 }
 
+
+-(NSString *)relativeDate:(NSDate *)baseDate {
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"d MMMM"];
+    NSDate *todayDate = [NSDate date];
+    double timeSince = [baseDate timeIntervalSinceDate:todayDate];
+    timeSince = timeSince * -1;
+    if(timeSince < 1) {
+    	return @"never";
+    } else 	if (timeSince < 60) {
+    	return @"less than a minute ago";
+    } else if (timeSince < 3600) {
+    	int diff = round(timeSince / 60);
+    	return [NSString stringWithFormat:@"%d minutes ago", diff];
+    } else if (timeSince < 86400) {
+    	int diff = round(timeSince / 60 / 60);
+    	return[NSString stringWithFormat:@"%d hours ago", diff];
+    } else if (timeSince < 345600) {
+    	int diff = round(timeSince / 60 / 60 / 24);
+    	return[NSString stringWithFormat:@"%d days ago", diff];
+    } else {
+    	return [df stringFromDate:baseDate];
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
