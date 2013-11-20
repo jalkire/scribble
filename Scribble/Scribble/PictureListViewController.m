@@ -63,7 +63,7 @@
     }
     
     //put gap on top
-    int originY = 0;
+    int originY = 10;
     
     //go through array of photos and add each to scroll view
     for (PFObject *drawingObject in self.drawingObjectsArray){
@@ -85,25 +85,33 @@
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
         [df setDateFormat:@"EEE, dd MMM yy HH:mm:ss VVVV"];
         
-        //set stamp position to top right corner of photo
-        UILabel *timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-120, 0, PicturesListView.frame.size.width,15)];
-        
+        //set stamp position to top left corner of photo
+        UILabel *nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, PicturesListView.frame.size.width,15)];
+        UILabel *timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(10, 13, PicturesListView.frame.size.width,15)];
+
         //query for current drawing
         PFQuery *userQuery = [PFQuery queryWithClassName:@"UserDrawing"];
         [userQuery includeKey:@"user"];
         [userQuery whereKey:@"objectId" equalTo:drawingObject.objectId];
         PFObject *drawObject = [userQuery getFirstObject];
     
-        //get user object associated with drawing
+        //get current user and user object associated with drawing
+        PFUser *currentUser = [PFUser currentUser];
         PFUser *photoUser = [drawObject objectForKey:@"user"];
-        
+    
+        if (currentUser.objectId == photoUser.objectId){
+            nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-70, 0, PicturesListView.frame.size.width,15)];
+            timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-70, 13, PicturesListView.frame.size.width,15)];
+        }
         //set stamp text to have user and datetime and format it
-        //timeStamp.text = [NSString stringWithFormat:@"%@, %@", photoUser.username, [df stringFromDate:creationDate]];
-        timeStamp.text = [NSString stringWithFormat:@"%@, %@", photoUser.username, [self relativeDate:creationDate]];
+        nameStamp.text = [NSString stringWithFormat:@"%@", photoUser.username];
+        timeStamp.text = [NSString stringWithFormat:@"%@", [self relativeDate:creationDate]];
 
-        timeStamp.font = [UIFont italicSystemFontOfSize:9];
+        nameStamp.font = [UIFont boldSystemFontOfSize:14];
+        timeStamp.font = [UIFont italicSystemFontOfSize:12];
 
-        //add the timestamp to uiview
+        //add the time and name stamps to uiview
+        [PicturesListView addSubview:nameStamp];
         [PicturesListView addSubview:timeStamp];
         
         //add the uiview to the scrollview
@@ -123,11 +131,18 @@
 
 
 -(NSString *)relativeDate:(NSDate *)baseDate {
+    //initialize a dateformatter set to 12 November type formatting
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"d MMMM"];
+    
+    //Get today's date
     NSDate *todayDate = [NSDate date];
+    
+    //Compute a double set the the time since now and the date pased into the method
     double timeSince = [baseDate timeIntervalSinceDate:todayDate];
     timeSince = timeSince * -1;
+    
+    //use a series of if statements to return time since
     if(timeSince < 1) {
     	return @"never";
     } else 	if (timeSince < 60) {
@@ -138,9 +153,11 @@
     } else if (timeSince < 86400) {
     	int diff = round(timeSince / 60 / 60);
     	return[NSString stringWithFormat:@"%d hours ago", diff];
-    } else if (timeSince < 345600) {
+    } else if (timeSince < 518400) {
     	int diff = round(timeSince / 60 / 60 / 24);
     	return[NSString stringWithFormat:@"%d days ago", diff];
+        
+    //if the date passed to the method is more than 6 days ago, simply return the date
     } else {
     	return [df stringFromDate:baseDate];
     }
