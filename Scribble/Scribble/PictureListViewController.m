@@ -98,15 +98,17 @@
         //get current user and user object associated with drawing
         PFUser *currentUser = [PFUser currentUser];
         PFUser *photoUser = [drawObject objectForKey:@"user"];
-    
+        
+        //if it is the current user's photo, move the stampts to the right corner
         if (currentUser.objectId == photoUser.objectId){
             nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-70, 0, PicturesListView.frame.size.width,15)];
             timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-70, 13, PicturesListView.frame.size.width,15)];
         }
-        //set stamp text to have user and datetime and format it
+        //set stamps' text to have username and datetime
         nameStamp.text = [NSString stringWithFormat:@"%@", photoUser.username];
         timeStamp.text = [NSString stringWithFormat:@"%@", [self relativeDate:creationDate]];
 
+        //set stamp formatting
         nameStamp.font = [UIFont boldSystemFontOfSize:14];
         timeStamp.font = [UIFont italicSystemFontOfSize:12];
 
@@ -131,9 +133,6 @@
 
 
 -(NSString *)relativeDate:(NSDate *)baseDate {
-    //initialize a dateformatter set to 12 November type formatting
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"d MMMM"];
     
     //Get today's date
     NSDate *todayDate = [NSDate date];
@@ -142,7 +141,7 @@
     double timeSince = [baseDate timeIntervalSinceDate:todayDate];
     timeSince = timeSince * -1;
     
-    //use a series of if statements to return time since
+    //use a series of if statements to return time since with proper phrasing
     if(timeSince < 1) {
     	return @"never";
     } else 	if (timeSince < 60) {
@@ -157,8 +156,12 @@
     	int diff = round(timeSince / 60 / 60 / 24);
     	return[NSString stringWithFormat:@"%d days ago", diff];
         
-    //if the date passed to the method is more than 6 days ago, simply return the date
+    //if the date passed to the method is more than 6 days old
     } else {
+        //initialize a dateformatter set to 12 November type formatting
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"d MMMM"];
+        //and return the date in this format
     	return [df stringFromDate:baseDate];
     }
 }
