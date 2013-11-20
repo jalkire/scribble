@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PictureListViewController : UIViewController
-
+@property NSString *chattitle;
 @end
