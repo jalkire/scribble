@@ -17,45 +17,39 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add a Chatroom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K93-sW-n9D">
-                                <rect key="frame" x="20" y="71" width="280" height="21"/>
+                                <rect key="frame" x="20" y="90" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1X-la-Cvh">
-                                <rect key="frame" x="20" y="148" width="51" height="21"/>
+                                <rect key="frame" x="20" y="169" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chatroom Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rzn-Cd-Km3">
-                                <rect key="frame" x="84" y="144" width="216" height="30"/>
+                                <rect key="frame" x="84" y="165" width="216" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ynO-eL-g0E">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem id="Gp0-RK-4Wt">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UHC-x2-OOs">
-                                            <connections>
-                                                <action selector="cancel:" destination="Hac-zp-Wya" id="i28-ae-abD"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ORl-b7-kJb">
-                                            <connections>
-                                                <action selector="addChatroom:" destination="Hac-zp-Wya" id="rOo-Z5-ru7"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wuF-cB-bbr">
+                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="dLs-5x-7Ku">
+                            <connections>
+                                <action selector="cancel:" destination="Hac-zp-Wya" id="LHN-6O-kUL"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="DcY-55-nuw">
+                            <connections>
+                                <action selector="addChatroom:" destination="Hac-zp-Wya" id="0He-eL-7bn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="chatroomName" destination="Rzn-Cd-Km3" id="N9H-lK-uHV"/>
                         <segue destination="FJG-fS-9ET" kind="unwind" identifier="dismissAddView" unwindAction="unwindAction:" id="YsF-1a-Vtf"/>
@@ -64,7 +58,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q54-P1-eba" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FJG-fS-9ET" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1216" y="37"/>
+            <point key="canvasLocation" x="1574" y="37"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LNW-kJ-H94">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="EL4-aE-BC2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fJu-qc-XVK">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Hac-zp-Wya" kind="relationship" relationship="rootViewController" id="hPz-NM-t7f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ep-JG-fbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1106" y="37"/>
         </scene>
         <!--Chatroom Table View Controller - Chatrooms-->
         <scene sceneID="rEo-UE-GdG">
@@ -132,7 +141,7 @@
                     <navigationItem key="navigationItem" title="Chatrooms" id="v54-P8-Lrx">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="g7A-Yr-4Ls">
                             <connections>
-                                <segue destination="Hac-zp-Wya" kind="modal" id="aaz-gb-jv8"/>
+                                <segue destination="EL4-aE-BC2" kind="modal" id="Pa3-7J-iiG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
