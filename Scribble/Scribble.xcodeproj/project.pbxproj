@@ -29,8 +29,6 @@
 		2F4420E71829BF6E00D483B2 /* FacebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4420E61829BF6E00D483B2 /* FacebookViewController.m */; };
 		2F4420EA1829BFC800D483B2 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4420E91829BFC800D483B2 /* DrawViewController.m */; };
 		2F4420F01829D32200D483B2 /* ParseTestingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4420EF1829D32200D483B2 /* ParseTestingViewController.m */; };
-		2F4421591833708600D483B2 /* AddChatroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4421581833708600D483B2 /* AddChatroomViewController.m */; };
-		2F44215C1833736800D483B2 /* ChatroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F44215B1833736800D483B2 /* ChatroomTableViewController.m */; };
 		2F7A13A018299E900062665F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A139F18299E900062665F /* Parse.framework */; };
 		2F7A13A218299F420062665F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13A118299F420062665F /* AudioToolbox.framework */; };
 		2F7A13A418299F4C0062665F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13A318299F4C0062665F /* CFNetwork.framework */; };
@@ -41,7 +39,9 @@
 		2F7A13AE18299F9C0062665F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13AD18299F9C0062665F /* Security.framework */; };
 		2F7A13B018299FA50062665F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13AF18299FA50062665F /* StoreKit.framework */; };
 		2F7A13B218299FB20062665F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13B118299FB20062665F /* SystemConfiguration.framework */; };
-		83EE3D8B1833145F005B0E77 /* PictureListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EE3D891833145F005B0E77 /* PictureListViewController.m */; };
+		C093A1D2183C3BB300831D0E /* AddChatroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C093A1CD183C3BB300831D0E /* AddChatroomViewController.m */; };
+		C093A1D3183C3BB300831D0E /* ChatroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C093A1CF183C3BB300831D0E /* ChatroomTableViewController.m */; };
+		C093A1D4183C3BB300831D0E /* PictureListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C093A1D1183C3BB300831D0E /* PictureListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,10 +86,6 @@
 		2F4420E91829BFC800D483B2 /* DrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
 		2F4420EE1829D32200D483B2 /* ParseTestingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseTestingViewController.h; sourceTree = "<group>"; };
 		2F4420EF1829D32200D483B2 /* ParseTestingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseTestingViewController.m; sourceTree = "<group>"; };
-		2F4421571833708600D483B2 /* AddChatroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddChatroomViewController.h; sourceTree = "<group>"; };
-		2F4421581833708600D483B2 /* AddChatroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddChatroomViewController.m; sourceTree = "<group>"; };
-		2F44215A1833736800D483B2 /* ChatroomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatroomTableViewController.h; sourceTree = "<group>"; };
-		2F44215B1833736800D483B2 /* ChatroomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatroomTableViewController.m; sourceTree = "<group>"; };
 		2F7A139F18299E900062665F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		2F7A13A118299F420062665F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		2F7A13A318299F4C0062665F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -100,8 +96,12 @@
 		2F7A13AD18299F9C0062665F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		2F7A13AF18299FA50062665F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2F7A13B118299FB20062665F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		83EE3D891833145F005B0E77 /* PictureListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureListViewController.m; sourceTree = "<group>"; };
-		83EE3D8A1833145F005B0E77 /* PictureListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureListViewController.h; sourceTree = "<group>"; };
+		C093A1CC183C3BB300831D0E /* AddChatroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddChatroomViewController.h; sourceTree = "<group>"; };
+		C093A1CD183C3BB300831D0E /* AddChatroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddChatroomViewController.m; sourceTree = "<group>"; };
+		C093A1CE183C3BB300831D0E /* ChatroomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatroomTableViewController.h; sourceTree = "<group>"; };
+		C093A1CF183C3BB300831D0E /* ChatroomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatroomTableViewController.m; sourceTree = "<group>"; };
+		C093A1D0183C3BB300831D0E /* PictureListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureListViewController.h; sourceTree = "<group>"; };
+		C093A1D1183C3BB300831D0E /* PictureListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,18 +189,18 @@
 				2F349AD2182331C700316ECC /* Main_iPad.storyboard */,
 				2F349AD5182331C700316ECC /* ViewController.h */,
 				2F349AD6182331C700316ECC /* ViewController.m */,
-				2F4421571833708600D483B2 /* AddChatroomViewController.h */,
-				2F4421581833708600D483B2 /* AddChatroomViewController.m */,
-				2F44215A1833736800D483B2 /* ChatroomTableViewController.h */,
-				2F44215B1833736800D483B2 /* ChatroomTableViewController.m */,
 				2F4420EE1829D32200D483B2 /* ParseTestingViewController.h */,
 				2F4420EF1829D32200D483B2 /* ParseTestingViewController.m */,
-				83EE3D8A1833145F005B0E77 /* PictureListViewController.h */,
-				83EE3D891833145F005B0E77 /* PictureListViewController.m */,
 				2F4420E81829BFC800D483B2 /* DrawViewController.h */,
 				2F4420E91829BFC800D483B2 /* DrawViewController.m */,
 				2F4420E51829BF6E00D483B2 /* FacebookViewController.h */,
 				2F4420E61829BF6E00D483B2 /* FacebookViewController.m */,
+				C093A1CC183C3BB300831D0E /* AddChatroomViewController.h */,
+				C093A1CD183C3BB300831D0E /* AddChatroomViewController.m */,
+				C093A1CE183C3BB300831D0E /* ChatroomTableViewController.h */,
+				C093A1CF183C3BB300831D0E /* ChatroomTableViewController.m */,
+				C093A1D0183C3BB300831D0E /* PictureListViewController.h */,
+				C093A1D1183C3BB300831D0E /* PictureListViewController.m */,
 				2F349AD8182331C700316ECC /* Images.xcassets */,
 				2F349AF518234BA300316ECC /* undo-4-512.png */,
 				2F349AF618234BA300316ECC /* eraser.png */,
@@ -343,13 +343,13 @@
 				2F4420E71829BF6E00D483B2 /* FacebookViewController.m in Sources */,
 				2F4420EA1829BFC800D483B2 /* DrawViewController.m in Sources */,
 				2F349AD7182331C700316ECC /* ViewController.m in Sources */,
+				C093A1D2183C3BB300831D0E /* AddChatroomViewController.m in Sources */,
 				2F4420F01829D32200D483B2 /* ParseTestingViewController.m in Sources */,
+				C093A1D4183C3BB300831D0E /* PictureListViewController.m in Sources */,
 				2F349ACE182331C700316ECC /* AppDelegate.m in Sources */,
-				83EE3D8B1833145F005B0E77 /* PictureListViewController.m in Sources */,
-				2F44215C1833736800D483B2 /* ChatroomTableViewController.m in Sources */,
+				C093A1D3183C3BB300831D0E /* ChatroomTableViewController.m in Sources */,
 				0ACAF333182EDD7F006101D9 /* PathView.m in Sources */,
 				2F349ACA182331C700316ECC /* main.m in Sources */,
-				2F4421591833708600D483B2 /* AddChatroomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,8 +8,7 @@
 
 #import "PathView.h"
 @interface PathView ()
-@property UIBezierPath *path;
-@property NSArray *oldpaths;
+
 @end
 
 @implementation PathView
