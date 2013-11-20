@@ -67,6 +67,7 @@
             
             //PFUser *user = [PFUser currentUser];
             //[userPhoto setObject:user forKey:@"user"];
+            //userPhoto[@"chatroom"] = ;
             
             [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
             {
