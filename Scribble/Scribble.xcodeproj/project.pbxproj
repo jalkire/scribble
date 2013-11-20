@@ -39,6 +39,9 @@
 		2F7A13AE18299F9C0062665F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13AD18299F9C0062665F /* Security.framework */; };
 		2F7A13B018299FA50062665F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13AF18299FA50062665F /* StoreKit.framework */; };
 		2F7A13B218299FB20062665F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13B118299FB20062665F /* SystemConfiguration.framework */; };
+		C093A1D2183C3BB300831D0E /* AddChatroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C093A1CD183C3BB300831D0E /* AddChatroomViewController.m */; };
+		C093A1D3183C3BB300831D0E /* ChatroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C093A1CF183C3BB300831D0E /* ChatroomTableViewController.m */; };
+		C093A1D4183C3BB300831D0E /* PictureListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C093A1D1183C3BB300831D0E /* PictureListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,12 @@
 		2F7A13AD18299F9C0062665F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		2F7A13AF18299FA50062665F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2F7A13B118299FB20062665F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C093A1CC183C3BB300831D0E /* AddChatroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddChatroomViewController.h; sourceTree = "<group>"; };
+		C093A1CD183C3BB300831D0E /* AddChatroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddChatroomViewController.m; sourceTree = "<group>"; };
+		C093A1CE183C3BB300831D0E /* ChatroomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatroomTableViewController.h; sourceTree = "<group>"; };
+		C093A1CF183C3BB300831D0E /* ChatroomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatroomTableViewController.m; sourceTree = "<group>"; };
+		C093A1D0183C3BB300831D0E /* PictureListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureListViewController.h; sourceTree = "<group>"; };
+		C093A1D1183C3BB300831D0E /* PictureListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +195,12 @@
 				2F4420E91829BFC800D483B2 /* DrawViewController.m */,
 				2F4420E51829BF6E00D483B2 /* FacebookViewController.h */,
 				2F4420E61829BF6E00D483B2 /* FacebookViewController.m */,
+				C093A1CC183C3BB300831D0E /* AddChatroomViewController.h */,
+				C093A1CD183C3BB300831D0E /* AddChatroomViewController.m */,
+				C093A1CE183C3BB300831D0E /* ChatroomTableViewController.h */,
+				C093A1CF183C3BB300831D0E /* ChatroomTableViewController.m */,
+				C093A1D0183C3BB300831D0E /* PictureListViewController.h */,
+				C093A1D1183C3BB300831D0E /* PictureListViewController.m */,
 				2F349AD8182331C700316ECC /* Images.xcassets */,
 				2F349AF518234BA300316ECC /* undo-4-512.png */,
 				2F349AF618234BA300316ECC /* eraser.png */,
@@ -328,8 +343,11 @@
 				2F4420E71829BF6E00D483B2 /* FacebookViewController.m in Sources */,
 				2F4420EA1829BFC800D483B2 /* DrawViewController.m in Sources */,
 				2F349AD7182331C700316ECC /* ViewController.m in Sources */,
+				C093A1D2183C3BB300831D0E /* AddChatroomViewController.m in Sources */,
 				2F4420F01829D32200D483B2 /* ParseTestingViewController.m in Sources */,
+				C093A1D4183C3BB300831D0E /* PictureListViewController.m in Sources */,
 				2F349ACE182331C700316ECC /* AppDelegate.m in Sources */,
+				C093A1D3183C3BB300831D0E /* ChatroomTableViewController.m in Sources */,
 				0ACAF333182EDD7F006101D9 /* PathView.m in Sources */,
 				2F349ACA182331C700316ECC /* main.m in Sources */,
 			);
