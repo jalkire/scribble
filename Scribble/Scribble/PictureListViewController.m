@@ -27,7 +27,7 @@
 -(void)getPictures
 {
     //make the query for the drawing class
-    PFQuery *query = [PFQuery queryWithClassName:@"UserPhoto"];
+    PFQuery *query = [PFQuery queryWithClassName:@"UserDrawing"];
     
     //order the query
     [query orderByAscending:@"createdAt"];
@@ -63,7 +63,7 @@
     }
     
     //put gap on top
-    int originY = 0;
+    int originY = 10;
     
     //go through array of photos and add each to scroll view
     for (PFObject *drawingObject in self.drawingObjectsArray){
@@ -83,17 +83,37 @@
         //take the date and time that the picture was uploaded at
         NSDate *creationDate = drawingObject.createdAt;
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        [df setDateFormat:@"h:mm a EEEE"];
+        [df setDateFormat:@"EEE, dd MMM yy HH:mm:ss VVVV"];
         
-        //and render it in top right corner of photo
-        
-        UILabel *timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-80, 0, PicturesListView.frame.size.width,15)];
-        //ready to take username from picture object: timeStamp.text = [NSString stringWithFormat:@"%@, %@", [drawingObject objectForKey:@"user"], [df stringFromDate:creationDate]];
-        
-        timeStamp.text = [NSString stringWithFormat:@"%@", [df stringFromDate:creationDate]];
-        timeStamp.font = [UIFont italicSystemFontOfSize:9];
+        //set stamp position to top left corner of photo
+        UILabel *nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, PicturesListView.frame.size.width,15)];
+        UILabel *timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(10, 13, PicturesListView.frame.size.width,15)];
 
-        //add the timestamp to uiview
+        //query for current drawing
+        PFQuery *userQuery = [PFQuery queryWithClassName:@"UserDrawing"];
+        [userQuery includeKey:@"user"];
+        [userQuery whereKey:@"objectId" equalTo:drawingObject.objectId];
+        PFObject *drawObject = [userQuery getFirstObject];
+    
+        //get current user and user object associated with drawing
+        PFUser *currentUser = [PFUser currentUser];
+        PFUser *photoUser = [drawObject objectForKey:@"user"];
+        
+        //if it is the current user's photo, move the stampts to the right corner
+        if (currentUser.objectId == photoUser.objectId){
+            nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-70, 0, PicturesListView.frame.size.width,15)];
+            timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-70, 13, PicturesListView.frame.size.width,15)];
+        }
+        //set stamps' text to have username and datetime
+        nameStamp.text = [NSString stringWithFormat:@"%@", photoUser.username];
+        timeStamp.text = [NSString stringWithFormat:@"%@", [self relativeDate:creationDate]];
+
+        //set stamp formatting
+        nameStamp.font = [UIFont boldSystemFontOfSize:14];
+        timeStamp.font = [UIFont italicSystemFontOfSize:12];
+
+        //add the time and name stamps to uiview
+        [PicturesListView addSubview:nameStamp];
         [PicturesListView addSubview:timeStamp];
         
         //add the uiview to the scrollview
@@ -111,6 +131,40 @@
     [self.scrollView setContentOffset:bottomOffset animated:YES];
 }
 
+
+-(NSString *)relativeDate:(NSDate *)baseDate {
+    
+    //Get today's date
+    NSDate *todayDate = [NSDate date];
+    
+    //Compute a double set the the time since now and the date pased into the method
+    double timeSince = [baseDate timeIntervalSinceDate:todayDate];
+    timeSince = timeSince * -1;
+    
+    //use a series of if statements to return time since with proper phrasing
+    if(timeSince < 1) {
+    	return @"never";
+    } else 	if (timeSince < 60) {
+    	return @"less than a minute ago";
+    } else if (timeSince < 3600) {
+    	int diff = round(timeSince / 60);
+    	return [NSString stringWithFormat:@"%d minutes ago", diff];
+    } else if (timeSince < 86400) {
+    	int diff = round(timeSince / 60 / 60);
+    	return[NSString stringWithFormat:@"%d hours ago", diff];
+    } else if (timeSince < 518400) {
+    	int diff = round(timeSince / 60 / 60 / 24);
+    	return[NSString stringWithFormat:@"%d days ago", diff];
+        
+    //if the date passed to the method is more than 6 days old
+    } else {
+        //initialize a dateformatter set to 12 November type formatting
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"d MMMM"];
+        //and return the date in this format
+    	return [df stringFromDate:baseDate];
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

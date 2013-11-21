@@ -83,6 +83,8 @@
     PFObject *chatroom;
     chatroom = self.chatrooms[indexPath.row];
     
+    NSString *chattitle = self.chatrooms[indexPath.row];
+    
     cell.textLabel.text = chatroom[@"Name"];
     cell.detailTextLabel.text = @"0 members";
     
@@ -128,7 +130,7 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
@@ -136,8 +138,16 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+
+if ([segue.identifier isEqualToString:@"chatroom"])
+{
+    ChatroomTableViewController *conversation=segue.destinationViewController;
+    NSIndexPath *selectedPath=self.tableView.indexPathForSelectedRow;
+    
 }
 
- */
+
+
+}
 
 @end
