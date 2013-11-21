@@ -39,6 +39,7 @@
 		2F7A13AE18299F9C0062665F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13AD18299F9C0062665F /* Security.framework */; };
 		2F7A13B018299FA50062665F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13AF18299FA50062665F /* StoreKit.framework */; };
 		2F7A13B218299FB20062665F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13B118299FB20062665F /* SystemConfiguration.framework */; };
+		2FF1A85B183C42E4001D0B15 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF1A85A183C42E4001D0B15 /* FacebookSDK.framework */; };
 		C093A1D2183C3BB300831D0E /* AddChatroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C093A1CD183C3BB300831D0E /* AddChatroomViewController.m */; };
 		C093A1D3183C3BB300831D0E /* ChatroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C093A1CF183C3BB300831D0E /* ChatroomTableViewController.m */; };
 		C093A1D4183C3BB300831D0E /* PictureListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C093A1D1183C3BB300831D0E /* PictureListViewController.m */; };
@@ -96,6 +97,7 @@
 		2F7A13AD18299F9C0062665F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		2F7A13AF18299FA50062665F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2F7A13B118299FB20062665F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2FF1A85A183C42E4001D0B15 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		C093A1CC183C3BB300831D0E /* AddChatroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddChatroomViewController.h; sourceTree = "<group>"; };
 		C093A1CD183C3BB300831D0E /* AddChatroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddChatroomViewController.m; sourceTree = "<group>"; };
 		C093A1CE183C3BB300831D0E /* ChatroomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatroomTableViewController.h; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FF1A85B183C42E4001D0B15 /* FacebookSDK.framework in Frameworks */,
 				2F7A13B218299FB20062665F /* SystemConfiguration.framework in Frameworks */,
 				2F7A13B018299FA50062665F /* StoreKit.framework in Frameworks */,
 				2F7A13AE18299F9C0062665F /* Security.framework in Frameworks */,
@@ -160,6 +163,7 @@
 		2F349ABC182331C700316ECC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2FF1A85A183C42E4001D0B15 /* FacebookSDK.framework */,
 				2F7A13B118299FB20062665F /* SystemConfiguration.framework */,
 				2F7A13AF18299FA50062665F /* StoreKit.framework */,
 				2F7A13AD18299F9C0062665F /* Security.framework */,
@@ -489,6 +493,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/Tyler/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
@@ -506,6 +511,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/Tyler/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
