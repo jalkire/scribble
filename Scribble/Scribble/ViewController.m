@@ -85,12 +85,13 @@
     {
         if (!error)
         {
-            PFObject *userPhoto = [PFObject objectWithClassName:@"UserPhoto"];
+            PFObject *userPhoto = [PFObject objectWithClassName:@"Drawing"];
             [userPhoto setObject:imageFile forKey:@"imageFile"];
             
-            //PFUser *user = [PFUser currentUser];
-            //[userPhoto setObject:user forKey:@"user"];
-            //userPhoto[@"chatroom"] = ;
+            PFUser *user = [PFUser currentUser];
+            [userPhoto setObject:user forKey:@"User"];
+            
+            userPhoto[@"Chatroom"] = self.chatroom;
             
             [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
             {
@@ -115,17 +116,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    /*TESTING PARSE STUFF*/
-    //PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    //[testObject setObject:@"bar" forKey:@"foo"];
-    //[testObject save];
-    
-/*  PFObject *person = [PFObject objectWithClassName:@"Person"];
-    person[@"Name"] = @"John";
-    person[@"Age"] = @21;
-    
-    [person saveInBackground];   */
     
 	// Do any additional setup after loading the view, typically from a nib.
 }

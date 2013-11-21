@@ -7,6 +7,7 @@
 //
 
 #import "PictureListViewController.h"
+#import "ViewController.h"
 #import "Parse/Parse.h"
 
 @interface PictureListViewController ()
@@ -27,7 +28,7 @@
 -(void)getPictures
 {
     //make the query for the drawing class
-    PFQuery *query = [PFQuery queryWithClassName:@"UserDrawing"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Drawing"];
     
     //order the query
     [query orderByAscending:@"createdAt"];
@@ -67,6 +68,8 @@
     
     //go through array of photos and add each to scroll view
     for (PFObject *drawingObject in self.drawingObjectsArray){
+        if ([drawingObject[@"Chatroom"] isEqualToString:self.chatroom])
+        {
         //Make  uiview object that will be put in scroll view
         UIView *PicturesListView = [[UIView alloc] initWithFrame:CGRectMake(0, originY, self.view.frame.size.width , 900)];
         
@@ -90,14 +93,14 @@
         UILabel *timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(10, 13, PicturesListView.frame.size.width,15)];
 
         //query for current drawing
-        PFQuery *userQuery = [PFQuery queryWithClassName:@"UserDrawing"];
-        [userQuery includeKey:@"user"];
+        PFQuery *userQuery = [PFQuery queryWithClassName:@"Drawing"];
+        [userQuery includeKey:@"User"];
         [userQuery whereKey:@"objectId" equalTo:drawingObject.objectId];
         PFObject *drawObject = [userQuery getFirstObject];
     
         //get current user and user object associated with drawing
         PFUser *currentUser = [PFUser currentUser];
-        PFUser *photoUser = [drawObject objectForKey:@"user"];
+        PFUser *photoUser = [drawObject objectForKey:@"User"];
         
         //if it is the current user's photo, move the stampts to the right corner
         if (currentUser.objectId == photoUser.objectId){
@@ -121,6 +124,7 @@
         
         //put gap between photos
         originY = originY + userPic.frame.size.height + 40;
+        }
     }
     
     //set scroll view size
@@ -199,6 +203,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"displayDrawView"])
+    {
+        ViewController *drawView = segue.destinationViewController;
+        
+        drawView.chatroom = self.chatroom;
+    }
 }
 
 @end

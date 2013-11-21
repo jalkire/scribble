@@ -11,6 +11,8 @@
 
 @interface ViewController : UIViewController
 
+@property NSString *chatroom;
+
 - (void)uploadImage:(NSData *)imageData :(id)sender;
 
 @end

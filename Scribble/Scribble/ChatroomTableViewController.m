@@ -7,6 +7,7 @@
 //
 
 #import "ChatroomTableViewController.h"
+#import "PictureListViewController.h"
 
 @interface ChatroomTableViewController ()
 @property NSArray *chatrooms;
@@ -83,7 +84,7 @@
     PFObject *chatroom;
     chatroom = self.chatrooms[indexPath.row];
     
-    NSString *chattitle = self.chatrooms[indexPath.row];
+    //NSString *chattitle = self.chatrooms[indexPath.row];
     
     cell.textLabel.text = chatroom[@"Name"];
     cell.detailTextLabel.text = @"0 members";
@@ -139,12 +140,13 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 
-if ([segue.identifier isEqualToString:@"chatroom"])
-{
-    ChatroomTableViewController *conversation=segue.destinationViewController;
-    NSIndexPath *selectedPath=self.tableView.indexPathForSelectedRow;
-    
-}
+    if ([segue.identifier isEqualToString:@"chatroom"])
+    {
+        PictureListViewController *conversation = segue.destinationViewController;
+        NSIndexPath *selectedPath = self.tableView.indexPathForSelectedRow;
+        
+        conversation.chatroom = self.chatrooms[selectedPath.row][@"Name"];
+    }
 
 
 
