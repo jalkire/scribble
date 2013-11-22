@@ -64,14 +64,15 @@
     }
     
     //put gap on top
-    int originY = 10;
+    int startY = 10;
     
     //go through array of photos and add each to scroll view
     for (PFObject *drawingObject in self.drawingObjectsArray){
+        //only if the drawings' chatroom attributes match the current chatroom
         if ([drawingObject[@"Chatroom"] isEqualToString:self.chatroom])
         {
         //Make  uiview object that will be put in scroll view
-        UIView *PicturesListView = [[UIView alloc] initWithFrame:CGRectMake(0, originY, self.view.frame.size.width , 900)];
+        UIView *PicturesListView = [[UIView alloc] initWithFrame:CGRectMake(0, startY, self.view.frame.size.width , 900)];
         
         //take the picture
         PFFile *pic = (PFFile *)[drawingObject objectForKey:@"imageFile"];
@@ -85,8 +86,6 @@
 
         //take the date and time that the picture was uploaded at
         NSDate *creationDate = drawingObject.createdAt;
-        NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        [df setDateFormat:@"EEE, dd MMM yy HH:mm:ss VVVV"];
         
         //set stamp position to top left corner of photo
         UILabel *nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, PicturesListView.frame.size.width,15)];
@@ -104,8 +103,8 @@
         
         //if it is the current user's photo, move the stampts to the right corner
         if (currentUser.objectId == photoUser.objectId){
-            nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-70, 0, PicturesListView.frame.size.width,15)];
-            timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-70, 13, PicturesListView.frame.size.width,15)];
+            nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-80, 0, PicturesListView.frame.size.width,15)];
+            timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-80, 13, PicturesListView.frame.size.width,15)];
         }
         //set stamps' text to have username and datetime
         nameStamp.text = [NSString stringWithFormat:@"%@", photoUser.username];
@@ -123,12 +122,12 @@
         [self.scrollView addSubview:PicturesListView];
         
         //put gap between photos
-        originY = originY + userPic.frame.size.height + 40;
+        startY = startY + userPic.frame.size.height + 40;
         }
     }
     
     //set scroll view size
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, originY);
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, startY);
     
     //scroll to bottom
     CGPoint bottomOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.bounds.size.height);
