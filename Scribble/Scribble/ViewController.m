@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ColorChoiceViewController.h"
 #import "PathView.h"
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet PathView *pathView;
@@ -14,8 +15,10 @@
 @end
 
 @implementation ViewController
+
 - (IBAction)didPan:(UIPanGestureRecognizer *)sender
 {
+    
     CGPoint point = [sender locationInView:self.pathView];
     if (sender.state == UIGestureRecognizerStateBegan)
     {
@@ -96,6 +99,8 @@
 {
     [super viewDidLoad];
     
+    self.pathView.penColor = [UIColor blueColor];
+    
     /*TESTING PARSE STUFF*/
     //PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
     //[testObject setObject:@"bar" forKey:@"foo"];
@@ -114,6 +119,23 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"colorPicker"])
+    {
+        ColorChoiceViewController *colors = segue.destinationViewController;
+        
+        colors.penColor = self.pathView.penColor;
+    }
+}
+
+- (IBAction)unwindWithPenColor:(UIStoryboardSegue*)unwindSegue
+{
+    ColorChoiceViewController *colors = unwindSegue.sourceViewController;
+    
+    self.pathView.penColor = colors.penColor;
 }
 
 @end

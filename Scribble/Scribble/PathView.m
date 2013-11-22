@@ -9,7 +9,8 @@
 #import "PathView.h"
 @interface PathView ()
 @property UIBezierPath *path;
-@property NSDictionary *oldpaths;
+@property NSArray *oldPaths;
+@property NSArray *pathColors;
 
 @end
 
@@ -42,10 +43,14 @@
     [self.path addLineToPoint:finalPoint];
     [self setNeedsDisplay];
     
-    if (!self.oldpaths)
-        self.oldpaths = [[NSDictionary alloc] init];
+    if (!self.oldPaths)
+    {
+        self.oldPaths = [[NSArray alloc] init];
+        self.pathColors = [[NSArray alloc] init];
+    }
     
-    self.oldpaths = @{"path":[self.oldpaths DictionaryByAddingObject:self.path], @"color": self.penColor};
+    self.oldPaths = [self.oldPaths arrayByAddingObject:self.path];
+    self.pathColors = [self.pathColors arrayByAddingObject:self.penColor];
         
 }
 
@@ -57,14 +62,19 @@
     // Drawing code
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    for (UIBezierPath *path in self.oldpaths)
+    NSInteger index = 0;
+    
+    for (UIBezierPath *path in self.oldPaths)
     {
         CGContextSetLineWidth(context, 4);
-        //[[UIColor blackColor] setStroke];
+        
+        [[self.pathColors objectAtIndex:index] setStroke];
         
         CGContextBeginPath(context);
         CGContextAddPath(context, path.CGPath);
         CGContextDrawPath(context, kCGPathStroke);
+        
+        index++;
     }
 
     CGContextSetLineWidth(context, 4);
