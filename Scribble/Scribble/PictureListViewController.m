@@ -146,7 +146,7 @@
     
     //use a series of if statements to return time since with proper phrasing
     if(timeSince < 1) {
-    	return @"never";
+    	return @"just now";
     } else 	if (timeSince < 60) {
     	return @"less than a minute ago";
     } else if (timeSince < 3600) {
