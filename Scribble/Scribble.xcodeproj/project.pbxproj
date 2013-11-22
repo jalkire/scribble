@@ -29,8 +29,6 @@
 		2F4420E71829BF6E00D483B2 /* FacebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4420E61829BF6E00D483B2 /* FacebookViewController.m */; };
 		2F4420EA1829BFC800D483B2 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4420E91829BFC800D483B2 /* DrawViewController.m */; };
 		2F4420F01829D32200D483B2 /* ParseTestingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4420EF1829D32200D483B2 /* ParseTestingViewController.m */; };
-		2F4421591833708600D483B2 /* AddChatroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4421581833708600D483B2 /* AddChatroomViewController.m */; };
-		2F44215C1833736800D483B2 /* ChatroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F44215B1833736800D483B2 /* ChatroomTableViewController.m */; };
 		2F7A13A018299E900062665F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A139F18299E900062665F /* Parse.framework */; };
 		2F7A13A218299F420062665F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13A118299F420062665F /* AudioToolbox.framework */; };
 		2F7A13A418299F4C0062665F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13A318299F4C0062665F /* CFNetwork.framework */; };
@@ -94,10 +92,6 @@
 		2F4420E91829BFC800D483B2 /* DrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
 		2F4420EE1829D32200D483B2 /* ParseTestingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseTestingViewController.h; sourceTree = "<group>"; };
 		2F4420EF1829D32200D483B2 /* ParseTestingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseTestingViewController.m; sourceTree = "<group>"; };
-		2F4421571833708600D483B2 /* AddChatroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddChatroomViewController.h; sourceTree = "<group>"; };
-		2F4421581833708600D483B2 /* AddChatroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddChatroomViewController.m; sourceTree = "<group>"; };
-		2F44215A1833736800D483B2 /* ChatroomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatroomTableViewController.h; sourceTree = "<group>"; };
-		2F44215B1833736800D483B2 /* ChatroomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatroomTableViewController.m; sourceTree = "<group>"; };
 		2F7A139F18299E900062665F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		2F7A13A118299F420062665F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		2F7A13A318299F4C0062665F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -126,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FF1A85B183C42E4001D0B15 /* FacebookSDK.framework in Frameworks */,
 				2F7A13B218299FB20062665F /* SystemConfiguration.framework in Frameworks */,
 				2F7A13B018299FA50062665F /* StoreKit.framework in Frameworks */,
 				2F7A13AE18299F9C0062665F /* Security.framework in Frameworks */,
@@ -177,6 +172,7 @@
 		2F349ABC182331C700316ECC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2FF1A85A183C42E4001D0B15 /* FacebookSDK.framework */,
 				2F7A13B118299FB20062665F /* SystemConfiguration.framework */,
 				2F7A13AF18299FA50062665F /* StoreKit.framework */,
 				2F7A13AD18299F9C0062665F /* Security.framework */,
@@ -214,8 +210,6 @@
 				2F44215B1833736800D483B2 /* ChatroomTableViewController.m */,
 				2F4420EE1829D32200D483B2 /* ParseTestingViewController.h */,
 				2F4420EF1829D32200D483B2 /* ParseTestingViewController.m */,
-				83EE3D8A1833145F005B0E77 /* PictureListViewController.h */,
-				83EE3D891833145F005B0E77 /* PictureListViewController.m */,
 				2F4420E81829BFC800D483B2 /* DrawViewController.h */,
 				2F4420E91829BFC800D483B2 /* DrawViewController.m */,
 				2F4420E51829BF6E00D483B2 /* FacebookViewController.h */,
@@ -228,6 +222,7 @@
 				36956C4D183E6DA900A59055 /* blue.png */,
 				36956C4F183E6DAD00A59055 /* purple.png */,
 				2F349AD8182331C700316ECC /* Images.xcassets */,
+				2FF1A864183EBFD9001D0B15 /* FacebookSignUp2.png */,
 				2F349AF518234BA300316ECC /* undo-4-512.png */,
 				2F349AF618234BA300316ECC /* eraser.png */,
 				2F349AF718234BA300316ECC /* pencil.png */,
@@ -348,6 +343,7 @@
 				2F349AF918234BA300316ECC /* eraser.png in Resources */,
 				36956C4E183E6DA900A59055 /* blue.png in Resources */,
 				2F349AD9182331C700316ECC /* Images.xcassets in Resources */,
+				2FF1A865183EBFD9001D0B15 /* FacebookSignUp2.png in Resources */,
 				2F349AD1182331C700316ECC /* Main_iPhone.storyboard in Resources */,
 				36956C50183E6DAD00A59055 /* purple.png in Resources */,
 				2F349AC8182331C700316ECC /* InfoPlist.strings in Resources */,
@@ -376,10 +372,12 @@
 				2F4420E71829BF6E00D483B2 /* FacebookViewController.m in Sources */,
 				2F4420EA1829BFC800D483B2 /* DrawViewController.m in Sources */,
 				2F349AD7182331C700316ECC /* ViewController.m in Sources */,
+				C093A1D2183C3BB300831D0E /* AddChatroomViewController.m in Sources */,
 				2F4420F01829D32200D483B2 /* ParseTestingViewController.m in Sources */,
+				C093A1D4183C3BB300831D0E /* PictureListViewController.m in Sources */,
 				2F349ACE182331C700316ECC /* AppDelegate.m in Sources */,
-				83EE3D8B1833145F005B0E77 /* PictureListViewController.m in Sources */,
-				2F44215C1833736800D483B2 /* ChatroomTableViewController.m in Sources */,
+				C093A1D3183C3BB300831D0E /* ChatroomTableViewController.m in Sources */,
+				2FF1A868183EC151001D0B15 /* NewAccountViewController.m in Sources */,
 				0ACAF333182EDD7F006101D9 /* PathView.m in Sources */,
 				2F349ACA182331C700316ECC /* main.m in Sources */,
 				2F4421591833708600D483B2 /* AddChatroomViewController.m in Sources */,

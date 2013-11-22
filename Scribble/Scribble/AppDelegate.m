@@ -44,6 +44,7 @@
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
         //[self refresh:nil];
+        
     }
     else {
         // Dummy username and password

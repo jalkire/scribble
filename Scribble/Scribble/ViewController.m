@@ -69,11 +69,13 @@
     {
         if (!error)
         {
-            PFObject *userPhoto = [PFObject objectWithClassName:@"UserPhoto"];
+            PFObject *userPhoto = [PFObject objectWithClassName:@"Drawing"];
             [userPhoto setObject:imageFile forKey:@"imageFile"];
             
-            //PFUser *user = [PFUser currentUser];
-            //[userPhoto setObject:user forKey:@"user"];
+            PFUser *user = [PFUser currentUser];
+            [userPhoto setObject:user forKey:@"User"];
+            
+            userPhoto[@"Chatroom"] = self.chatroom;
             
             [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
             {

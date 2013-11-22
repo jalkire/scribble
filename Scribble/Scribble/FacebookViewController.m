@@ -7,12 +7,30 @@
 //
 
 #import "FacebookViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface FacebookViewController ()
 
 @end
 
 @implementation FacebookViewController
+- (IBAction)facebookSignIn:(id)sender
+{
+    /*
+    FBLoginView *loginView = [[FBLoginView alloc] init];
+    loginView.readPermissions = @[@"basic_info"];
+    [self.view addSubview:loginView];
+    
+    [FBSession openActiveSessionWithReadPermissions:@[@"basic_info"]
+                                       allowLoginUI:YES
+                                  completionHandler:^(FBSession *session,
+                                                      FBSessionState status,
+                                                      NSError *error) {
+                                      // Respond to session state changes,
+                                      // ex: updating the view
+                                  }];
+     */
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

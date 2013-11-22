@@ -7,6 +7,7 @@
 //
 
 #import "PictureListViewController.h"
+#import "ViewController.h"
 #import "Parse/Parse.h"
 
 @interface PictureListViewController ()
@@ -27,7 +28,7 @@
 -(void)getPictures
 {
     //make the query for the drawing class
-    PFQuery *query = [PFQuery queryWithClassName:@"UserPhoto"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Drawing"];
     
     //order the query
     [query orderByAscending:@"createdAt"];
@@ -63,12 +64,15 @@
     }
     
     //put gap on top
-    int originY = 0;
+    int startY = 10;
     
     //go through array of photos and add each to scroll view
     for (PFObject *drawingObject in self.drawingObjectsArray){
+        //only if the drawings' chatroom attributes match the current chatroom
+        if ([drawingObject[@"Chatroom"] isEqualToString:self.chatroom])
+        {
         //Make  uiview object that will be put in scroll view
-        UIView *PicturesListView = [[UIView alloc] initWithFrame:CGRectMake(0, originY, self.view.frame.size.width , 900)];
+        UIView *PicturesListView = [[UIView alloc] initWithFrame:CGRectMake(0, startY, self.view.frame.size.width , 900)];
         
         //take the picture
         PFFile *pic = (PFFile *)[drawingObject objectForKey:@"imageFile"];
@@ -82,35 +86,101 @@
 
         //take the date and time that the picture was uploaded at
         NSDate *creationDate = drawingObject.createdAt;
-        NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        [df setDateFormat:@"h:mm a EEEE"];
         
-        //and render it in top right corner of photo
-        
-        UILabel *timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-80, 0, PicturesListView.frame.size.width,15)];
-        //ready to take username from picture object: timeStamp.text = [NSString stringWithFormat:@"%@, %@", [drawingObject objectForKey:@"user"], [df stringFromDate:creationDate]];
-        
-        timeStamp.text = [NSString stringWithFormat:@"%@", [df stringFromDate:creationDate]];
-        timeStamp.font = [UIFont italicSystemFontOfSize:9];
+        //set stamp position to top left corner of photo
+        UILabel *nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, PicturesListView.frame.size.width,15)];
+        UILabel *timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(10, 13, PicturesListView.frame.size.width,15)];
 
-        //add the timestamp to uiview
+        //query for current drawing
+        PFQuery *userQuery = [PFQuery queryWithClassName:@"Drawing"];
+        [userQuery includeKey:@"User"];
+        [userQuery whereKey:@"objectId" equalTo:drawingObject.objectId];
+        PFObject *drawObject = [userQuery getFirstObject];
+    
+        //get current user and user object associated with drawing
+        PFUser *currentUser = [PFUser currentUser];
+        PFUser *photoUser = [drawObject objectForKey:@"User"];
+        
+        //if it is the current user's photo, move the stampts to the right corner
+        if (currentUser.objectId == photoUser.objectId){
+            nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-80, 0, PicturesListView.frame.size.width,15)];
+            timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-80, 13, PicturesListView.frame.size.width,15)];
+        }
+        //set stamps' text to have username and datetime
+        nameStamp.text = [NSString stringWithFormat:@"%@", photoUser.username];
+        timeStamp.text = [NSString stringWithFormat:@"%@", [self relativeDate:creationDate]];
+
+        //set stamp formatting
+        nameStamp.font = [UIFont boldSystemFontOfSize:14];
+        timeStamp.font = [UIFont italicSystemFontOfSize:12];
+
+        //add the time and name stamps to uiview
+        [PicturesListView addSubview:nameStamp];
         [PicturesListView addSubview:timeStamp];
         
         //add the uiview to the scrollview
         [self.scrollView addSubview:PicturesListView];
         
         //put gap between photos
-        originY = originY + userPic.frame.size.height + 40;
+        startY = startY + userPic.frame.size.height + 40;
+            
+        //set scroll view size
+        self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, startY);
+            
+        //scroll to bottom
+        CGPoint bottomOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.bounds.size.height);
+        [self.scrollView setContentOffset:bottomOffset animated:YES];
+        }
+            }
+    
+    //if no drawings have been loaded
+    if (startY == 10){
+        //make a label
+        UILabel *emptyLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 15, self.view.frame.size.width,15)];
+        
+        //set it to say no drawings
+        emptyLabel.text = [NSString stringWithFormat:@"No drawings yet! Press Draw below to add your own!"];
+        emptyLabel.font = [UIFont italicSystemFontOfSize:12];
+        
+        //and put it on the scrollview
+        [self.scrollView addSubview:emptyLabel];
     }
-    
-    //set scroll view size
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, originY);
-    
-    //scroll to bottom
-    CGPoint bottomOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.bounds.size.height);
-    [self.scrollView setContentOffset:bottomOffset animated:YES];
 }
 
+
+-(NSString *)relativeDate:(NSDate *)baseDate {
+    
+    //Get today's date
+    NSDate *todayDate = [NSDate date];
+    
+    //Compute a double set the the time since now and the date pased into the method
+    double timeSince = [baseDate timeIntervalSinceDate:todayDate];
+    timeSince = timeSince * -1;
+    
+    //use a series of if statements to return time since with proper phrasing
+    if(timeSince < 1) {
+    	return @"just now";
+    } else 	if (timeSince < 60) {
+    	return @"less than a minute ago";
+    } else if (timeSince < 3600) {
+    	int diff = round(timeSince / 60);
+    	return [NSString stringWithFormat:@"%d minutes ago", diff];
+    } else if (timeSince < 86400) {
+    	int diff = round(timeSince / 60 / 60);
+    	return[NSString stringWithFormat:@"%d hours ago", diff];
+    } else if (timeSince < 518400) {
+    	int diff = round(timeSince / 60 / 60 / 24);
+    	return[NSString stringWithFormat:@"%d days ago", diff];
+        
+    //if the date passed to the method is more than 6 days old
+    } else {
+        //initialize a dateformatter set to 12 November type formatting
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"d MMMM"];
+        //and return the date in this format
+    	return [df stringFromDate:baseDate];
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -145,6 +215,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"displayDrawView"])
+    {
+        ViewController *drawView = segue.destinationViewController;
+        
+        drawView.chatroom = self.chatroom;
+    }
 }
 
 @end
