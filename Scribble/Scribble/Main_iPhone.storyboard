@@ -199,7 +199,7 @@
                                 <rect key="frame" x="20" y="169" width="280" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" image="FacebookSignUp2.png"/>
+                                <state key="normal" image="FacebookSignUp2-2.png"/>
                                 <connections>
                                     <action selector="facebookSignIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xSY-U6-IBX"/>
                                 </connections>
@@ -283,7 +283,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFX-Uh-0RE">
-                                <rect key="frame" x="136" y="357" width="49" height="30"/>
+                                <rect key="frame" x="136" y="154" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -364,12 +364,16 @@
                                 <items>
                                     <barButtonItem image="undo-4-512.png" id="JbR-8l-3rw">
                                         <connections>
-                                            <action selector="undo:" destination="F61-v9-GLg" id="Ynh-gp-66L"/>
+                                            <action selector="undo:" destination="F61-v9-GLg" id="ySk-8W-Llt"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="65" style="plain" systemItem="fixedSpace" id="XIU-yb-125"/>
                                     <barButtonItem image="pencil.png" id="B2W-rm-ja4"/>
-                                    <barButtonItem image="eraser.png" style="plain" id="BWH-6Q-lTQ"/>
+                                    <barButtonItem image="eraser.png" style="plain" id="BWH-6Q-lTQ">
+                                        <connections>
+                                            <action selector="eraseButtonTapped:" destination="F61-v9-GLg" id="BTd-Rw-sRP"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="60" style="plain" systemItem="fixedSpace" id="HI2-Q8-uFe"/>
                                     <barButtonItem systemItem="done" id="5ya-al-pXE">
                                         <connections>
@@ -402,7 +406,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FacebookSignUp2.png" width="280" height="64"/>
+        <image name="FacebookSignUp2-2.png" width="280" height="64"/>
         <image name="eraser.png" width="32" height="32"/>
         <image name="pencil.png" width="32" height="32"/>
         <image name="undo-4-512.png" width="32" height="32"/>

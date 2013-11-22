@@ -38,6 +38,18 @@
     }
 }
 
+- (IBAction)undo:(id)sender
+{
+    
+    UIBezierPath *path  = [self.pathView.oldpaths lastObject];
+    [path removeAllPoints];
+    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.pathView.oldpaths];
+    [tempArray removeLastObject];
+    self.pathView.oldpaths = [NSArray arrayWithArray:tempArray];
+    [self.pathView setNeedsDisplay];
+    
+}
+
 - (IBAction)doneButtonTapped:(UIButton*)sender
 {
     UIGraphicsBeginImageContext(self.pathView.bounds.size);
@@ -56,8 +68,13 @@
     NSData *imageData = UIImagePNGRepresentation(image1);
     [self uploadImage:imageData :sender];
 }
-
+/*
 - (IBAction)eraseButtonTapped:(UIButton*)sender
+{
+    self.pathView.penColor = [UIColor whiteColor];
+}*/
+
+- (IBAction)eraseButtonTapped:(id)sender
 {
     self.pathView.penColor = [UIColor whiteColor];
 }
