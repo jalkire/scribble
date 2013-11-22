@@ -44,14 +44,16 @@
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
         //[self refresh:nil];
-        
+        //NSLog(@"there is a current user");
     }
     else {
+        [PFUser logInWithUsername:@"Guest" password:@"Pass"];
+        /*
         // Dummy username and password
         PFUser *user = [PFUser user];
-        user.username = @"Tyler";
-        user.password = @"Tester";
-        user.email = @"Tyler@example.com";
+        user.username = @"Guest";
+        user.password = @"Pass";
+        user.email = @"guest@example.com";
         
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error) {
@@ -59,8 +61,11 @@
             } else {
                 [PFUser logInWithUsername:@"Matt" password:@"password"];
                 // [self refresh:nil];
+                NSLog(@"Sign Up Failed");
             }
         }];
+        */
+        
     }
 
 }
