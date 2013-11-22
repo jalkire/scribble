@@ -123,15 +123,28 @@
         
         //put gap between photos
         startY = startY + userPic.frame.size.height + 40;
+            
+        //set scroll view size
+        self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, startY);
+            
+        //scroll to bottom
+        CGPoint bottomOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.bounds.size.height);
+        [self.scrollView setContentOffset:bottomOffset animated:YES];
         }
+            }
+    
+    //if no drawings have been loaded
+    if (startY == 10){
+        //make a label
+        UILabel *emptyLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 15, self.view.frame.size.width,15)];
+        
+        //set it to say no drawings
+        emptyLabel.text = [NSString stringWithFormat:@"No drawings yet! Press Draw below to add your own!"];
+        emptyLabel.font = [UIFont italicSystemFontOfSize:12];
+        
+        //and put it on the scrollview
+        [self.scrollView addSubview:emptyLabel];
     }
-    
-    //set scroll view size
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, startY);
-    
-    //scroll to bottom
-    CGPoint bottomOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.bounds.size.height);
-    [self.scrollView setContentOffset:bottomOffset animated:YES];
 }
 
 
@@ -146,7 +159,7 @@
     
     //use a series of if statements to return time since with proper phrasing
     if(timeSince < 1) {
-    	return @"never";
+    	return @"just now";
     } else 	if (timeSince < 60) {
     	return @"less than a minute ago";
     } else if (timeSince < 3600) {
