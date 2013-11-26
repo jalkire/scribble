@@ -42,6 +42,7 @@
 		2FF1A85B183C42E4001D0B15 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF1A85A183C42E4001D0B15 /* FacebookSDK.framework */; };
 		2FF1A865183EBFD9001D0B15 /* FacebookSignUp2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FF1A864183EBFD9001D0B15 /* FacebookSignUp2.png */; };
 		2FF1A868183EC151001D0B15 /* NewAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1A867183EC151001D0B15 /* NewAccountViewController.m */; };
+		C016500F18456C5A000A115F /* ScribleICON.png in Resources */ = {isa = PBXBuildFile; fileRef = C016500E18456C5A000A115F /* ScribleICON.png */; };
 		C093A1D2183C3BB300831D0E /* AddChatroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C093A1CD183C3BB300831D0E /* AddChatroomViewController.m */; };
 		C093A1D3183C3BB300831D0E /* ChatroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C093A1CF183C3BB300831D0E /* ChatroomTableViewController.m */; };
 		C093A1D4183C3BB300831D0E /* PictureListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C093A1D1183C3BB300831D0E /* PictureListViewController.m */; };
@@ -103,6 +104,7 @@
 		2FF1A864183EBFD9001D0B15 /* FacebookSignUp2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FacebookSignUp2.png; sourceTree = "<group>"; };
 		2FF1A866183EC151001D0B15 /* NewAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAccountViewController.h; sourceTree = "<group>"; };
 		2FF1A867183EC151001D0B15 /* NewAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAccountViewController.m; sourceTree = "<group>"; };
+		C016500E18456C5A000A115F /* ScribleICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScribleICON.png; sourceTree = "<group>"; };
 		C093A1CC183C3BB300831D0E /* AddChatroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddChatroomViewController.h; sourceTree = "<group>"; };
 		C093A1CD183C3BB300831D0E /* AddChatroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddChatroomViewController.m; sourceTree = "<group>"; };
 		C093A1CE183C3BB300831D0E /* ChatroomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatroomTableViewController.h; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				2FF1A864183EBFD9001D0B15 /* FacebookSignUp2.png */,
 				2F349AF518234BA300316ECC /* undo-4-512.png */,
 				2F349AF618234BA300316ECC /* eraser.png */,
+				C016500E18456C5A000A115F /* ScribleICON.png */,
 				2F349AF718234BA300316ECC /* pencil.png */,
 				2F349AC4182331C700316ECC /* Supporting Files */,
 			);
@@ -330,6 +333,7 @@
 				2F349AD4182331C700316ECC /* Main_iPad.storyboard in Resources */,
 				2F349AFA18234BA300316ECC /* pencil.png in Resources */,
 				2F349AF918234BA300316ECC /* eraser.png in Resources */,
+				C016500F18456C5A000A115F /* ScribleICON.png in Resources */,
 				2F349AD9182331C700316ECC /* Images.xcassets in Resources */,
 				2FF1A865183EBFD9001D0B15 /* FacebookSignUp2.png in Resources */,
 				2F349AD1182331C700316ECC /* Main_iPhone.storyboard in Resources */,
