@@ -126,6 +126,7 @@
         }
             }
     
+    if (startY != 10){
     //set scroll view size
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, startY);
     
@@ -134,8 +135,7 @@
     [self.scrollView setContentOffset:bottomOffset animated:NO];
     
     //if no drawings have been loaded
-    if (startY == 10){
-        
+    }else{
         //make a uiview
         UIView *labelView = [[UIView alloc] initWithFrame:CGRectMake(0, startY, self.view.frame.size.width , 900)];
         
