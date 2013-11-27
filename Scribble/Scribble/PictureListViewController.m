@@ -103,8 +103,8 @@
         
         //if it is the current user's photo, move the stampts to the right corner
         if (currentUser.objectId == photoUser.objectId){
-            nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-80, 0, PicturesListView.frame.size.width,15)];
-            timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-80, 13, PicturesListView.frame.size.width,15)];
+            nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-90, 0, PicturesListView.frame.size.width,15)];
+            timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-90, 13, PicturesListView.frame.size.width,15)];
         }
         //set stamps' text to have username and datetime
         nameStamp.text = [NSString stringWithFormat:@"%@", photoUser.username];
