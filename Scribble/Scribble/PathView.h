@@ -12,7 +12,7 @@
 
 @property UIBezierPath *path;
 @property NSArray *oldpaths;
-
+@property NSArray *pathColors;
 
 - (void) beginPath: (CGPoint) startPoint;
 - (void) addPath: (CGPoint) point;

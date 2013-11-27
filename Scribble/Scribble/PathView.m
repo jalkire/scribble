@@ -10,7 +10,7 @@
 @interface PathView ()
 //@property UIBezierPath *path;
 //@property NSArray *oldPaths;
-@property NSArray *pathColors;
+//@property NSArray *pathColors;
 
 @end
 

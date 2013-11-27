@@ -44,8 +44,11 @@
     UIBezierPath *path  = [self.pathView.oldpaths lastObject];
     [path removeAllPoints];
     NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.pathView.oldpaths];
+    NSMutableArray *tempColorArray = [NSMutableArray arrayWithArray:self.pathView.pathColors];
     [tempArray removeLastObject];
+    [tempColorArray removeLastObject];
     self.pathView.oldpaths = [NSArray arrayWithArray:tempArray];
+    self.pathView.pathColors = [NSArray arrayWithArray:tempColorArray];
     [self.pathView setNeedsDisplay];
     
 }

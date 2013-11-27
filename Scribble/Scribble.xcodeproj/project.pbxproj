@@ -39,7 +39,7 @@
 		2F7A13B018299FA50062665F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13AF18299FA50062665F /* StoreKit.framework */; };
 		2F7A13B218299FB20062665F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13B118299FB20062665F /* SystemConfiguration.framework */; };
 		2F96EE71183EEFB3000252DD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F96EE70183EEFB3000252DD /* Main_iPhone.storyboard */; };
-		2F96EE73183EEFC1000252DD /* FacebookSignUp2-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F96EE72183EEFC1000252DD /* FacebookSignUp2-2.png */; };
+		2FA0E2D118456B3500BF13BF /* FacebookSignUp2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA0E2D018456B3500BF13BF /* FacebookSignUp2.png */; };
 		2FC745C4183EE8C800879A49 /* AddChatroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC745BD183EE8C800879A49 /* AddChatroomViewController.m */; };
 		2FC745C5183EE8C800879A49 /* ChatroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC745BF183EE8C800879A49 /* ChatroomTableViewController.m */; };
 		2FC745C6183EE8C800879A49 /* NewAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC745C1183EE8C800879A49 /* NewAccountViewController.m */; };
@@ -106,7 +106,7 @@
 		2F7A13AF18299FA50062665F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2F7A13B118299FB20062665F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2F96EE70183EEFB3000252DD /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
-		2F96EE72183EEFC1000252DD /* FacebookSignUp2-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FacebookSignUp2-2.png"; sourceTree = "<group>"; };
+		2FA0E2D018456B3500BF13BF /* FacebookSignUp2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FacebookSignUp2.png; sourceTree = "<group>"; };
 		2FC745BC183EE8C800879A49 /* AddChatroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddChatroomViewController.h; sourceTree = "<group>"; };
 		2FC745BD183EE8C800879A49 /* AddChatroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddChatroomViewController.m; sourceTree = "<group>"; };
 		2FC745BE183EE8C800879A49 /* ChatroomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatroomTableViewController.h; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 				2FC745C1183EE8C800879A49 /* NewAccountViewController.m */,
 				2FC745C2183EE8C800879A49 /* PictureListViewController.h */,
 				2FC745C3183EE8C800879A49 /* PictureListViewController.m */,
-				2F96EE72183EEFC1000252DD /* FacebookSignUp2-2.png */,
+				2FA0E2D018456B3500BF13BF /* FacebookSignUp2.png */,
 				36E28B91183C4F3B00DFB491 /* black.png */,
 				36956C3F183E6C7000A59055 /* red.png */,
 				36956C51183E6E5F00A59055 /* orange.png */,
@@ -357,12 +357,12 @@
 				36956C4E183E6DA900A59055 /* blue.png in Resources */,
 				2F349AD9182331C700316ECC /* Images.xcassets in Resources */,
 				36956C50183E6DAD00A59055 /* purple.png in Resources */,
+				2FA0E2D118456B3500BF13BF /* FacebookSignUp2.png in Resources */,
 				2F349AC8182331C700316ECC /* InfoPlist.strings in Resources */,
 				36956C4C183E6DA400A59055 /* green.png in Resources */,
 				36956C44183E6C7B00A59055 /* yellow.png in Resources */,
 				2F349AF818234BA300316ECC /* undo-4-512.png in Resources */,
 				2F96EE71183EEFB3000252DD /* Main_iPhone.storyboard in Resources */,
-				2F96EE73183EEFC1000252DD /* FacebookSignUp2-2.png in Resources */,
 				36956C52183E6E5F00A59055 /* orange.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
