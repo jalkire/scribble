@@ -71,6 +71,10 @@
     NSData *imageData = UIImagePNGRepresentation(image1);
     [self uploadImage:imageData :sender];
 }
+- (IBAction)cancelDrawing:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 /*
 - (IBAction)eraseButtonTapped:(UIButton*)sender
 {

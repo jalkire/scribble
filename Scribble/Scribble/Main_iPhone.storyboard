@@ -368,7 +368,11 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="cancel" id="f5e-xx-QpO"/>
+                                    <barButtonItem systemItem="cancel" id="f5e-xx-QpO">
+                                        <connections>
+                                            <action selector="cancelDrawing:" destination="F61-v9-GLg" id="B8i-5X-yzz"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="32" style="plain" systemItem="fixedSpace" id="XIU-yb-125"/>
                                     <barButtonItem image="pencil.png" id="B2W-rm-ja4">
                                         <connections>
