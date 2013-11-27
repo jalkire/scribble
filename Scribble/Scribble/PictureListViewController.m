@@ -104,7 +104,7 @@
         //if it is the current user's photo, move the stampts to the right corner
         if (currentUser.objectId == photoUser.objectId){
             nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-90, 0, PicturesListView.frame.size.width,15)];
-            timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-90, 13, PicturesListView.frame.size.width,15)];
+            timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-90, 28, PicturesListView.frame.size.width,15)];
         }
         //set stamps' text to have username and datetime
         nameStamp.text = [NSString stringWithFormat:@"%@", photoUser.username];
@@ -136,6 +136,7 @@
     //if no drawings have been loaded
     if (startY == 10){
         
+        //make a uiview
         UIView *labelView = [[UIView alloc] initWithFrame:CGRectMake(0, startY, self.view.frame.size.width , 900)];
         
         //make a label
@@ -145,9 +146,10 @@
         emptyLabel.text = [NSString stringWithFormat:@"No drawings yet! Press Draw below to add your own!"];
         emptyLabel.font = [UIFont italicSystemFontOfSize:12];
         
+        //put the label on the uiview
         [labelView addSubview:emptyLabel];
         
-        //and put it on the scrollview
+        //and put the uiview on the scrollview
         [self.scrollView addSubview:labelView];
     }
 }
