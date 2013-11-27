@@ -79,7 +79,7 @@
         
         //and put it in a frame, reducing its size and centering
         UIImageView *userPic = [[UIImageView alloc] initWithImage:[UIImage imageWithData:pic.getData]];
-        userPic.frame = CGRectMake(PicturesListView.frame.size.width/6, 15, PicturesListView.frame.size.width/1.5, userPic.frame.size.height/2);
+        userPic.frame = CGRectMake(PicturesListView.frame.size.width/6, 15, PicturesListView.frame.size.width/1.5, userPic.frame.size.height/1.5);
 
         //add picture to uiview
         [PicturesListView addSubview:userPic];
@@ -135,6 +135,9 @@
     
     //if no drawings have been loaded
     if (startY == 10){
+        
+        UIView *labelView = [[UIView alloc] initWithFrame:CGRectMake(0, startY, self.view.frame.size.width , 900)];
+        
         //make a label
         UILabel *emptyLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 15, self.view.frame.size.width,15)];
         
@@ -142,8 +145,10 @@
         emptyLabel.text = [NSString stringWithFormat:@"No drawings yet! Press Draw below to add your own!"];
         emptyLabel.font = [UIFont italicSystemFontOfSize:12];
         
+        [labelView addSubview:emptyLabel];
+        
         //and put it on the scrollview
-        [self.scrollView addSubview:emptyLabel];
+        [self.scrollView addSubview:labelView];
     }
 }
 
