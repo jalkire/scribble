@@ -79,7 +79,7 @@
         
         //and put it in a frame, reducing its size and centering
         UIImageView *userPic = [[UIImageView alloc] initWithImage:[UIImage imageWithData:pic.getData]];
-        userPic.frame = CGRectMake(PicturesListView.frame.size.width/6, 15, PicturesListView.frame.size.width/1.5, userPic.frame.size.height/1.5);
+        userPic.frame = CGRectMake(PicturesListView.frame.size.width/6, 28, PicturesListView.frame.size.width/1.5, userPic.frame.size.height/1.5);
 
         //add picture to uiview
         [PicturesListView addSubview:userPic];
@@ -104,7 +104,7 @@
         //if it is the current user's photo, move the stampts to the right corner
         if (currentUser.objectId == photoUser.objectId){
             nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-90, 0, PicturesListView.frame.size.width,15)];
-            timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-90, 28, PicturesListView.frame.size.width,15)];
+            timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-90, 13, PicturesListView.frame.size.width,15)];
         }
         //set stamps' text to have username and datetime
         nameStamp.text = [NSString stringWithFormat:@"%@", photoUser.username];
