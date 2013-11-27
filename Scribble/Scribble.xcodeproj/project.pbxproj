@@ -14,7 +14,6 @@
 		2F349AC8182331C700316ECC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F349AC6182331C700316ECC /* InfoPlist.strings */; };
 		2F349ACA182331C700316ECC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F349AC9182331C700316ECC /* main.m */; };
 		2F349ACE182331C700316ECC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F349ACD182331C700316ECC /* AppDelegate.m */; };
-		2F349AD4182331C700316ECC /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F349AD2182331C700316ECC /* Main_iPad.storyboard */; };
 		2F349AD7182331C700316ECC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F349AD6182331C700316ECC /* ViewController.m */; };
 		2F349AD9182331C700316ECC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F349AD8182331C700316ECC /* Images.xcassets */; };
 		2F349AE0182331C700316ECC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F349ADF182331C700316ECC /* XCTest.framework */; };
@@ -38,7 +37,6 @@
 		2F7A13AE18299F9C0062665F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13AD18299F9C0062665F /* Security.framework */; };
 		2F7A13B018299FA50062665F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13AF18299FA50062665F /* StoreKit.framework */; };
 		2F7A13B218299FB20062665F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13B118299FB20062665F /* SystemConfiguration.framework */; };
-		2F96EE71183EEFB3000252DD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F96EE70183EEFB3000252DD /* Main_iPhone.storyboard */; };
 		2FA0E2D118456B3500BF13BF /* FacebookSignUp2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA0E2D018456B3500BF13BF /* FacebookSignUp2.png */; };
 		2FA0E2D5184570B800BF13BF /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA0E2D4184570B800BF13BF /* Main_iPhone.storyboard */; };
 		2FC745C4183EE8C800879A49 /* AddChatroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC745BD183EE8C800879A49 /* AddChatroomViewController.m */; };
@@ -106,7 +104,6 @@
 		2F7A13AD18299F9C0062665F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		2F7A13AF18299FA50062665F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2F7A13B118299FB20062665F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		2F96EE70183EEFB3000252DD /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		2FA0E2D018456B3500BF13BF /* FacebookSignUp2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FacebookSignUp2.png; sourceTree = "<group>"; };
 		2FA0E2D4184570B800BF13BF /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		2FC745BC183EE8C800879A49 /* AddChatroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddChatroomViewController.h; sourceTree = "<group>"; };
@@ -351,7 +348,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F349AD4182331C700316ECC /* Main_iPad.storyboard in Resources */,
 				36E28B92183C4F3B00DFB491 /* black.png in Resources */,
 				2F349AFA18234BA300316ECC /* pencil.png in Resources */,
 				36956C40183E6C7000A59055 /* red.png in Resources */,
@@ -365,7 +361,6 @@
 				36956C4C183E6DA400A59055 /* green.png in Resources */,
 				36956C44183E6C7B00A59055 /* yellow.png in Resources */,
 				2F349AF818234BA300316ECC /* undo-4-512.png in Resources */,
-				2F96EE71183EEFB3000252DD /* Main_iPhone.storyboard in Resources */,
 				36956C52183E6E5F00A59055 /* orange.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
