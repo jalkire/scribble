@@ -25,7 +25,6 @@
 		2F349AF818234BA300316ECC /* undo-4-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F349AF518234BA300316ECC /* undo-4-512.png */; };
 		2F349AF918234BA300316ECC /* eraser.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F349AF618234BA300316ECC /* eraser.png */; };
 		2F349AFA18234BA300316ECC /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F349AF718234BA300316ECC /* pencil.png */; };
-		2F42113B183EECCD0083A103 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F42113A183EECCD0083A103 /* Main_iPhone.storyboard */; };
 		2F4420E71829BF6E00D483B2 /* FacebookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4420E61829BF6E00D483B2 /* FacebookViewController.m */; };
 		2F4420EA1829BFC800D483B2 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4420E91829BFC800D483B2 /* DrawViewController.m */; };
 		2F4420F01829D32200D483B2 /* ParseTestingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4420EF1829D32200D483B2 /* ParseTestingViewController.m */; };
@@ -41,6 +40,7 @@
 		2F7A13B218299FB20062665F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7A13B118299FB20062665F /* SystemConfiguration.framework */; };
 		2F96EE71183EEFB3000252DD /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F96EE70183EEFB3000252DD /* Main_iPhone.storyboard */; };
 		2FA0E2D118456B3500BF13BF /* FacebookSignUp2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA0E2D018456B3500BF13BF /* FacebookSignUp2.png */; };
+		2FA0E2D5184570B800BF13BF /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA0E2D4184570B800BF13BF /* Main_iPhone.storyboard */; };
 		2FC745C4183EE8C800879A49 /* AddChatroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC745BD183EE8C800879A49 /* AddChatroomViewController.m */; };
 		2FC745C5183EE8C800879A49 /* ChatroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC745BF183EE8C800879A49 /* ChatroomTableViewController.m */; };
 		2FC745C6183EE8C800879A49 /* NewAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC745C1183EE8C800879A49 /* NewAccountViewController.m */; };
@@ -90,7 +90,6 @@
 		2F349AF518234BA300316ECC /* undo-4-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undo-4-512.png"; sourceTree = "<group>"; };
 		2F349AF618234BA300316ECC /* eraser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eraser.png; sourceTree = "<group>"; };
 		2F349AF718234BA300316ECC /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
-		2F42113A183EECCD0083A103 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		2F4420E51829BF6E00D483B2 /* FacebookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookViewController.h; sourceTree = "<group>"; };
 		2F4420E61829BF6E00D483B2 /* FacebookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookViewController.m; sourceTree = "<group>"; };
 		2F4420E81829BFC800D483B2 /* DrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawViewController.h; sourceTree = "<group>"; };
@@ -109,6 +108,7 @@
 		2F7A13B118299FB20062665F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2F96EE70183EEFB3000252DD /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		2FA0E2D018456B3500BF13BF /* FacebookSignUp2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FacebookSignUp2.png; sourceTree = "<group>"; };
+		2FA0E2D4184570B800BF13BF /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		2FC745BC183EE8C800879A49 /* AddChatroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddChatroomViewController.h; sourceTree = "<group>"; };
 		2FC745BD183EE8C800879A49 /* AddChatroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddChatroomViewController.m; sourceTree = "<group>"; };
 		2FC745BE183EE8C800879A49 /* ChatroomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatroomTableViewController.h; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 			children = (
 				2F349ACC182331C700316ECC /* AppDelegate.h */,
 				2F349ACD182331C700316ECC /* AppDelegate.m */,
-				2F42113A183EECCD0083A103 /* Main_iPhone.storyboard */,
+				2FA0E2D4184570B800BF13BF /* Main_iPhone.storyboard */,
 				0ACAF331182EDD7F006101D9 /* PathView.h */,
 				0ACAF332182EDD7F006101D9 /* PathView.m */,
 				2F349AD2182331C700316ECC /* Main_iPad.storyboard */,
@@ -353,9 +353,9 @@
 			files = (
 				2F349AD4182331C700316ECC /* Main_iPad.storyboard in Resources */,
 				36E28B92183C4F3B00DFB491 /* black.png in Resources */,
-				2F42113B183EECCD0083A103 /* Main_iPhone.storyboard in Resources */,
 				2F349AFA18234BA300316ECC /* pencil.png in Resources */,
 				36956C40183E6C7000A59055 /* red.png in Resources */,
+				2FA0E2D5184570B800BF13BF /* Main_iPhone.storyboard in Resources */,
 				2F349AF918234BA300316ECC /* eraser.png in Resources */,
 				36956C4E183E6DA900A59055 /* blue.png in Resources */,
 				2F349AD9182331C700316ECC /* Images.xcassets in Resources */,
