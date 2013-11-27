@@ -122,16 +122,16 @@
         [self.scrollView addSubview:PicturesListView];
         
         //put gap between photos
-        startY = startY + userPic.frame.size.height + 40;
-            
-        //set scroll view size
-        self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, startY);
-            
-        //scroll to bottom
-        CGPoint bottomOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.bounds.size.height);
-        [self.scrollView setContentOffset:bottomOffset animated:YES];
+        startY = startY + userPic.frame.size.height + 60;
         }
             }
+    
+    //set scroll view size
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, startY);
+    
+    //scroll to bottom
+    CGPoint bottomOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.bounds.size.height);
+    [self.scrollView setContentOffset:bottomOffset animated:NO];
     
     //if no drawings have been loaded
     if (startY == 10){
@@ -232,6 +232,10 @@
         
         drawView.chatroom = self.chatroom;
     }
+}
+- (IBAction)refreshed:(UIBarButtonItem *)sender {
+    //get the pictures
+    [self getPictures];
 }
 
 @end
