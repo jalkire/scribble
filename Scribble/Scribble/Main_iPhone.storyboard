@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4yM-9w-PfT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4yM-9w-PfT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Add Chatroom View Controller-->
@@ -368,15 +368,16 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem image="undo-4-512.png" id="JbR-8l-3rw">
-                                        <connections>
-                                            <action selector="undo:" destination="F61-v9-GLg" id="ySk-8W-Llt"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem width="65" style="plain" systemItem="fixedSpace" id="XIU-yb-125"/>
+                                    <barButtonItem systemItem="cancel" id="f5e-xx-QpO"/>
+                                    <barButtonItem width="32" style="plain" systemItem="fixedSpace" id="XIU-yb-125"/>
                                     <barButtonItem image="pencil.png" id="B2W-rm-ja4">
                                         <connections>
                                             <segue destination="z4s-cw-v3K" kind="modal" id="Mau-7f-d3Z"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="undo-4-512.png" id="JbR-8l-3rw">
+                                        <connections>
+                                            <action selector="undo:" destination="F61-v9-GLg" id="ySk-8W-Llt"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem image="eraser.png" style="plain" id="BWH-6Q-lTQ">
@@ -384,7 +385,7 @@
                                             <action selector="eraseButtonTapped:" destination="F61-v9-GLg" id="BTd-Rw-sRP"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="60" style="plain" systemItem="fixedSpace" id="HI2-Q8-uFe"/>
+                                    <barButtonItem width="35" style="plain" systemItem="fixedSpace" id="HI2-Q8-uFe"/>
                                     <barButtonItem systemItem="done" id="5ya-al-pXE">
                                         <connections>
                                             <action selector="doneButtonTapped:" destination="F61-v9-GLg" id="glx-M5-8uh"/>
