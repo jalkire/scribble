@@ -1,3 +1,4 @@
+
 //
 //  ChatroomTableViewController.m
 //  Scribble
@@ -8,6 +9,8 @@
 
 #import "ChatroomTableViewController.h"
 #import "PictureListViewController.h"
+#import "FacebookViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface ChatroomTableViewController ()
 @property NSArray *chatrooms;
@@ -39,6 +42,14 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)showLoginView
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    FacebookViewController* loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"facebook"];
+    
+    [self presentViewController:loginViewController animated:YES completion:nil];
 }
 
 - (void)viewDidLoad
@@ -92,6 +103,27 @@
     return cell;
 }
 
+
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    // See if the app has a valid token for the current state.
+    
+    
+    
+    if (![FBSession openActiveSessionWithReadPermissions:nil
+                                            allowLoginUI:NO
+                                       completionHandler:^(FBSession *session,
+                                                           FBSessionState state, NSError *error) {
+                                           NSLog(@"Error: %@", error);
+                                       }]) {
+                                           
+                                           // No, display the login page.
+                                           [self showLoginView];
+                                           
+                                       }
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
