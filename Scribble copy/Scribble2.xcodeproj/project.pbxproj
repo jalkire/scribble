@@ -42,7 +42,6 @@
 		2FF1A85B183C42E4001D0B15 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF1A85A183C42E4001D0B15 /* FacebookSDK.framework */; };
 		2FF1A865183EBFD9001D0B15 /* FacebookSignUp2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FF1A864183EBFD9001D0B15 /* FacebookSignUp2.png */; };
 		2FF1A868183EC151001D0B15 /* NewAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF1A867183EC151001D0B15 /* NewAccountViewController.m */; };
-		6F310E8C1846EDF0006F19F9 /* scribble2 in Resources */ = {isa = PBXBuildFile; fileRef = 6F310E8B1846EDF0006F19F9 /* scribble2 */; };
 		C093A1D2183C3BB300831D0E /* AddChatroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C093A1CD183C3BB300831D0E /* AddChatroomViewController.m */; };
 		C093A1D3183C3BB300831D0E /* ChatroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C093A1CF183C3BB300831D0E /* ChatroomTableViewController.m */; };
 		C093A1D4183C3BB300831D0E /* PictureListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C093A1D1183C3BB300831D0E /* PictureListViewController.m */; };
@@ -104,7 +103,6 @@
 		2FF1A864183EBFD9001D0B15 /* FacebookSignUp2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FacebookSignUp2.png; sourceTree = "<group>"; };
 		2FF1A866183EC151001D0B15 /* NewAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAccountViewController.h; sourceTree = "<group>"; };
 		2FF1A867183EC151001D0B15 /* NewAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAccountViewController.m; sourceTree = "<group>"; };
-		6F310E8B1846EDF0006F19F9 /* scribble2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = scribble2; path = "../../../../../../Users/Idontcare/Documents/CalPoly/Freshman Fall/CPE 123/scribble2"; sourceTree = "<group>"; };
 		C093A1CC183C3BB300831D0E /* AddChatroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddChatroomViewController.h; sourceTree = "<group>"; };
 		C093A1CD183C3BB300831D0E /* AddChatroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddChatroomViewController.m; sourceTree = "<group>"; };
 		C093A1CE183C3BB300831D0E /* ChatroomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatroomTableViewController.h; sourceTree = "<group>"; };
@@ -230,7 +228,6 @@
 				2F349AC5182331C700316ECC /* Scribble-Info.plist */,
 				2F349AC6182331C700316ECC /* InfoPlist.strings */,
 				2F349AC9182331C700316ECC /* main.m */,
-				6F310E8B1846EDF0006F19F9 /* scribble2 */,
 				2F349ACB182331C700316ECC /* Scribble-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -306,7 +303,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2F349AB5182331C600316ECC /* Build configuration list for PBXProject "Scribble" */;
+			buildConfigurationList = 2F349AB5182331C600316ECC /* Build configuration list for PBXProject "Scribble2" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -331,7 +328,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F349AD4182331C700316ECC /* Main_iPad.storyboard in Resources */,
-				6F310E8C1846EDF0006F19F9 /* scribble2 in Resources */,
 				2F349AFA18234BA300316ECC /* pencil.png in Resources */,
 				2F349AF918234BA300316ECC /* eraser.png in Resources */,
 				2F349AD9182331C700316ECC /* Images.xcassets in Resources */,
@@ -578,7 +574,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2F349AB5182331C600316ECC /* Build configuration list for PBXProject "Scribble" */ = {
+		2F349AB5182331C600316ECC /* Build configuration list for PBXProject "Scribble2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F349AED182331C700316ECC /* Debug */,
