@@ -106,7 +106,7 @@
                 if (!error)
                 {
                  //   [self refresh:nil];
-                    [self performSegueWithIdentifier:@"dismissDrawView" sender:sender];
+                    //[self performSegueWithIdentifier:@"dismissDrawView" sender:sender];
                 }
                 else
                 {
@@ -116,6 +116,7 @@
 
         }
     }];
+    [self performSegueWithIdentifier:@"dismissDrawView" sender:sender];
 }
 
 

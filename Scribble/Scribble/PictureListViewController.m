@@ -198,11 +198,11 @@
     return self;
 }
 
--(void)viewWillAppear:(BOOL)animated
+- (void)viewDidLoad
 {
-    //remove old stuff from scroll view
-    [super viewWillAppear:animated];
-
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+    
     for (id viewToRemove in [self.scrollView subviews]){
         if ([viewToRemove isMemberOfClass:[UIView class]])
             [viewToRemove removeFromSuperview];
@@ -210,12 +210,6 @@
     
     //get the pictures
     [self getPictures];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
