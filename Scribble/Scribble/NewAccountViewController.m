@@ -24,9 +24,9 @@
     NSString *password = self.passwordField.text;
     NSString *email = self.emailField.text;
     
-    ChatroomTableViewController *chatroomList = [[ChatroomTableViewController alloc]
-                                                 initWithNibName:nil
-                                                 bundle:nil];
+    ChatroomTableViewController *chatroomList = [[ChatroomTableViewController alloc] init];
+                                                // initWithNibName:nil
+                                                // bundle:nil];
     
     PFUser *user = [PFUser user];
     user.username = username;

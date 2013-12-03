@@ -7,6 +7,8 @@
 //
 
 #import "FacebookViewController.h"
+#import "ChatroomTableViewController.h"
+#import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface FacebookViewController ()
@@ -45,6 +47,37 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        //[self refresh:nil];
+        //NSLog(@"there is a current user");
+        ChatroomTableViewController *chatView = [[ChatroomTableViewController alloc] init];
+        [self presentViewController:(ChatroomTableViewController *)chatView
+                           animated:YES
+                         completion:nil];
+    }
+    else {
+        [PFUser logInWithUsername:@"Guest" password:@"Pass"];
+        /*
+         // Dummy username and password
+         PFUser *user = [PFUser user];
+         user.username = @"Guest";
+         user.password = @"Pass";
+         user.email = @"guest@example.com";
+         
+         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+         if (!error) {
+         //    [self refresh:nil];
+         } else {
+         [PFUser logInWithUsername:@"Matt" password:@"password"];
+         // [self refresh:nil];
+         NSLog(@"Sign Up Failed");
+         }
+         }];
+         */
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning
