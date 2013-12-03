@@ -79,7 +79,7 @@
         
         //and put it in a frame, reducing its size and centering
         UIImageView *userPic = [[UIImageView alloc] initWithImage:[UIImage imageWithData:pic.getData]];
-        userPic.frame = CGRectMake(PicturesListView.frame.size.width/6, 15, PicturesListView.frame.size.width/1.5, userPic.frame.size.height/2);
+        userPic.frame = CGRectMake(PicturesListView.frame.size.width/6, 28, PicturesListView.frame.size.width/1.5, userPic.frame.size.height/1.5);
 
         //add picture to uiview
         [PicturesListView addSubview:userPic];
@@ -103,8 +103,8 @@
         
         //if it is the current user's photo, move the stampts to the right corner
         if (currentUser.objectId == photoUser.objectId){
-            nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-80, 0, PicturesListView.frame.size.width,15)];
-            timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-80, 13, PicturesListView.frame.size.width,15)];
+            nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-90, 0, PicturesListView.frame.size.width,15)];
+            timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-90, 13, PicturesListView.frame.size.width,15)];
         }
         //set stamps' text to have username and datetime
         nameStamp.text = [NSString stringWithFormat:@"%@", photoUser.username];
@@ -122,16 +122,36 @@
         [self.scrollView addSubview:PicturesListView];
         
         //put gap between photos
-        startY = startY + userPic.frame.size.height + 40;
+        startY = startY + userPic.frame.size.height + 60;
         }
-    }
+            }
     
+    if (startY != 10){
     //set scroll view size
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, startY);
     
     //scroll to bottom
     CGPoint bottomOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.bounds.size.height);
-    [self.scrollView setContentOffset:bottomOffset animated:YES];
+    [self.scrollView setContentOffset:bottomOffset animated:NO];
+    
+    //if no drawings have been loaded
+    }else{
+        //make a uiview
+        UIView *labelView = [[UIView alloc] initWithFrame:CGRectMake(0, startY, self.view.frame.size.width , 900)];
+        
+        //make a label
+        UILabel *emptyLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 15, self.view.frame.size.width,15)];
+        
+        //set it to say no drawings
+        emptyLabel.text = [NSString stringWithFormat:@"No drawings yet! Press Draw below to add your own!"];
+        emptyLabel.font = [UIFont italicSystemFontOfSize:12];
+        
+        //put the label on the uiview
+        [labelView addSubview:emptyLabel];
+        
+        //and put the uiview on the scrollview
+        [self.scrollView addSubview:labelView];
+    }
 }
 
 
@@ -146,7 +166,7 @@
     
     //use a series of if statements to return time since with proper phrasing
     if(timeSince < 1) {
-    	return @"never";
+    	return @"just now";
     } else 	if (timeSince < 60) {
     	return @"less than a minute ago";
     } else if (timeSince < 3600) {
@@ -178,11 +198,11 @@
     return self;
 }
 
--(void)viewWillAppear:(BOOL)animated
+- (void)viewDidLoad
 {
-    //remove old stuff from scroll view
-    [super viewWillAppear:animated];
-
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+    
     for (id viewToRemove in [self.scrollView subviews]){
         if ([viewToRemove isMemberOfClass:[UIView class]])
             [viewToRemove removeFromSuperview];
@@ -190,12 +210,6 @@
     
     //get the pictures
     [self getPictures];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -212,6 +226,10 @@
         
         drawView.chatroom = self.chatroom;
     }
+}
+- (IBAction)refreshed:(UIBarButtonItem *)sender {
+    //get the pictures
+    [self getPictures];
 }
 
 @end
