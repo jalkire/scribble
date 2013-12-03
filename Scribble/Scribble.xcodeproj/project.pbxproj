@@ -41,6 +41,8 @@
 		2FA0E2D5184570B800BF13BF /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA0E2D4184570B800BF13BF /* Main_iPhone.storyboard */; };
 		2FA0E2DA18457B3200BF13BF /* X.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA0E2D918457B3200BF13BF /* X.png */; };
 		2FA0E2DE1845825600BF13BF /* Icon-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA0E2DD1845825600BF13BF /* Icon-blue.png */; };
+		2FA0E2E0184D691E00BF13BF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FA0E2DF184D691E00BF13BF /* FacebookSDK.framework */; };
+		2FA0E2E3184D789700BF13BF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA0E2E2184D789600BF13BF /* LoginViewController.m */; };
 		2FC745C4183EE8C800879A49 /* AddChatroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC745BD183EE8C800879A49 /* AddChatroomViewController.m */; };
 		2FC745C5183EE8C800879A49 /* ChatroomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC745BF183EE8C800879A49 /* ChatroomTableViewController.m */; };
 		2FC745C6183EE8C800879A49 /* NewAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC745C1183EE8C800879A49 /* NewAccountViewController.m */; };
@@ -52,7 +54,6 @@
 		36956C50183E6DAD00A59055 /* purple.png in Resources */ = {isa = PBXBuildFile; fileRef = 36956C4F183E6DAD00A59055 /* purple.png */; };
 		36B47BE4183E730400682E09 /* ColorChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B47BE3183E730400682E09 /* ColorChoiceViewController.m */; };
 		36E28B92183C4F3B00DFB491 /* black.png in Resources */ = {isa = PBXBuildFile; fileRef = 36E28B91183C4F3B00DFB491 /* black.png */; };
-		6F72E4E4184D5E5E00FB6247 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F72E4E3184D5E5E00FB6247 /* FacebookSDK.framework */; };
 		833AFCF21845767900F16D1D /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 36956C51183E6E5F00A59055 /* orange.png */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +112,9 @@
 		2FA0E2D4184570B800BF13BF /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		2FA0E2D918457B3200BF13BF /* X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = X.png; sourceTree = "<group>"; };
 		2FA0E2DD1845825600BF13BF /* Icon-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-blue.png"; sourceTree = "<group>"; };
+		2FA0E2DF184D691E00BF13BF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		2FA0E2E1184D789600BF13BF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		2FA0E2E2184D789600BF13BF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		2FC745BC183EE8C800879A49 /* AddChatroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddChatroomViewController.h; sourceTree = "<group>"; };
 		2FC745BD183EE8C800879A49 /* AddChatroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddChatroomViewController.m; sourceTree = "<group>"; };
 		2FC745BE183EE8C800879A49 /* ChatroomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatroomTableViewController.h; sourceTree = "<group>"; };
@@ -128,7 +132,6 @@
 		36B47BE2183E730400682E09 /* ColorChoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorChoiceViewController.h; sourceTree = "<group>"; };
 		36B47BE3183E730400682E09 /* ColorChoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorChoiceViewController.m; sourceTree = "<group>"; };
 		36E28B91183C4F3B00DFB491 /* black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black.png; sourceTree = "<group>"; };
-		6F72E4E3184D5E5E00FB6247 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "../../../../../Users/Idontcare/Downloads/scribble-Evan/Scribble/FacebookSDK.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +152,7 @@
 				2F349AC2182331C700316ECC /* UIKit.framework in Frameworks */,
 				2F7A13A018299E900062665F /* Parse.framework in Frameworks */,
 				2F349ABE182331C700316ECC /* Foundation.framework in Frameworks */,
-				6F72E4E4184D5E5E00FB6247 /* FacebookSDK.framework in Frameworks */,
+				2FA0E2E0184D691E00BF13BF /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +191,7 @@
 		2F349ABC182331C700316ECC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6F72E4E3184D5E5E00FB6247 /* FacebookSDK.framework */,
+				2FA0E2DF184D691E00BF13BF /* FacebookSDK.framework */,
 				2F7A13B118299FB20062665F /* SystemConfiguration.framework */,
 				2F7A13AF18299FA50062665F /* StoreKit.framework */,
 				2F7A13AD18299F9C0062665F /* Security.framework */,
@@ -232,6 +235,8 @@
 				2FC745BF183EE8C800879A49 /* ChatroomTableViewController.m */,
 				2FC745C0183EE8C800879A49 /* NewAccountViewController.h */,
 				2FC745C1183EE8C800879A49 /* NewAccountViewController.m */,
+				2FA0E2E1184D789600BF13BF /* LoginViewController.h */,
+				2FA0E2E2184D789600BF13BF /* LoginViewController.m */,
 				2FC745C2183EE8C800879A49 /* PictureListViewController.h */,
 				2FC745C3183EE8C800879A49 /* PictureListViewController.m */,
 				2FA0E2DD1845825600BF13BF /* Icon-blue.png */,
@@ -394,6 +399,7 @@
 			files = (
 				2F4420E71829BF6E00D483B2 /* FacebookViewController.m in Sources */,
 				2F4420EA1829BFC800D483B2 /* DrawViewController.m in Sources */,
+				2FA0E2E3184D789700BF13BF /* LoginViewController.m in Sources */,
 				2F349AD7182331C700316ECC /* ViewController.m in Sources */,
 				2F4420F01829D32200D483B2 /* ParseTestingViewController.m in Sources */,
 				2F349ACE182331C700316ECC /* AppDelegate.m in Sources */,
@@ -536,6 +542,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"/Users/Idontcare/Downloads/scribble-Evan/Scribble",
+					/Users/Tyler/Desktop/ClassApps/scribble/Scribble,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
@@ -554,6 +561,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"/Users/Idontcare/Downloads/scribble-Evan/Scribble",
+					/Users/Tyler/Desktop/ClassApps/scribble/Scribble,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scribble/Scribble-Prefix.pch";
