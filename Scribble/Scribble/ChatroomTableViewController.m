@@ -10,10 +10,11 @@
 #import "ChatroomTableViewController.h"
 #import "PictureListViewController.h"
 #import "FacebookViewController.h"
-#import <FacebookSDK/FacebookSDK.h>
+#import "AppDelegate.h"
 
 @interface ChatroomTableViewController ()
 @property NSArray *chatrooms;
+- (IBAction)logoutButton:(id)sender;
 
 @end
 
@@ -184,4 +185,9 @@
 
 }
 
+- (IBAction)logoutButton:(id)sender {
+    AppDelegate *appDelegate;
+    [appDelegate.session closeAndClearTokenInformation];
+    
+}
 @end

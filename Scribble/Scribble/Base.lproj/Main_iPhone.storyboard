@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4yM-9w-PfT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4yM-9w-PfT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Add Chatroom View Controller-->
@@ -138,13 +138,20 @@
                         </prototypes>
                         <sections/>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Chatrooms" id="v54-P8-Lrx">
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="ysi-Sh-9yi">
+                            <connections>
+                                <action selector="logoutButton:" destination="Nia-8Z-Rdg" id="ZUH-MB-Eac"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="g7A-Yr-4Ls">
                             <connections>
                                 <segue destination="EL4-aE-BC2" kind="modal" id="Pa3-7J-iiG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qR5-nb-nlq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
