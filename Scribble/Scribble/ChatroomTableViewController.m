@@ -114,7 +114,7 @@
     
     if (![PFUser currentUser])
     {
-    if (![FBSession openActiveSessionWithReadPermissions:nil
+        if (![FBSession openActiveSessionWithReadPermissions:nil
                                             allowLoginUI:NO
                                        completionHandler:^(FBSession *session,
                                                            FBSessionState state, NSError *error) {
@@ -191,11 +191,17 @@
 {
     AppDelegate *appDelegate;
     [appDelegate.session closeAndClearTokenInformation];
+    appDelegate.session = nil;
     if ([PFUser currentUser])
     {
         [PFUser logOut];
     }
-    
-    [self viewDidAppear:NO];
+    //[appDelegate.session close];
+    while (appDelegate.session.isOpen)
+    {
+        [appDelegate.session close];
+        [appDelegate.session closeAndClearTokenInformation];
+    }
+    [self showLoginView];
 }
 @end
