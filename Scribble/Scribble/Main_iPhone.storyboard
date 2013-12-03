@@ -207,7 +207,6 @@
                                 <state key="normal" image="FacebookSignUp2.png"/>
                                 <connections>
                                     <action selector="buttonClickHandler:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wAW-mY-V93"/>
-                                    <action selector="facebookSignIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xSY-U6-IBX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already have an account?          " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4c-wo-jtv">
@@ -229,7 +228,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wZz-Xz-uQa">
-                                <rect key="frame" x="59" y="371" width="97" height="30"/>
+                                <rect key="frame" x="20" y="371" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -596,8 +595,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="createAccount:" destination="8s6-0Y-TH1" eventType="touchUpInside" id="j49-8o-Ml5"/>
-                                    <action selector="login:" destination="8s6-0Y-TH1" eventType="touchUpInside" id="JiY-ag-l5B"/>
+                                    <action selector="login:" destination="8s6-0Y-TH1" eventType="touchUpInside" id="j9l-jh-x5D"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -606,8 +604,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="bxj-P9-xQn"/>
                     <connections>
-                        <outlet property="passwordField" destination="bb7-Cs-k8L" id="Fyv-u7-GOc"/>
-                        <outlet property="usernameField" destination="0yL-Zd-otB" id="ckS-ow-S6K"/>
+                        <outlet property="passwordField" destination="bb7-Cs-k8L" id="XVB-G7-iJf"/>
+                        <outlet property="usernameField" destination="0yL-Zd-otB" id="s5h-r4-abh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pLk-0P-Cq3" userLabel="First Responder" sceneMemberID="firstResponder"/>

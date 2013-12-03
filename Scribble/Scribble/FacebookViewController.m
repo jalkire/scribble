@@ -22,6 +22,7 @@
 
 @implementation FacebookViewController
 
+//- (void)facebookSignIn:
 //{
     /*
     FBLoginView *loginView = [[FBLoginView alloc] init];
@@ -83,11 +84,13 @@
         [self.loginlogout setTitle:@"Log out" forState:UIControlStateNormal];
         [self.textNoteOrLink setText:[NSString stringWithFormat:@"https://graph.facebook.com/me/friends?access_token=%@",
                                       appDelegate.session.accessTokenData.accessToken]];
-        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     } else {
         // login-needed account UI is shown whenever the session is closed
         [self.loginlogout setTitle:@"Log in" forState:UIControlStateNormal];
         [self.textNoteOrLink setText:@"Login to create a link to fetch account data"];
+        
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
