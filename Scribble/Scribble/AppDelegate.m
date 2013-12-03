@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -42,6 +44,13 @@
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 /*
     PFUser *currentUser = [PFUser currentUser];
+    
+    
+    
+    
+    
+    
+    
     if (currentUser) {
         //[self refresh:nil];
         //NSLog(@"there is a current user");

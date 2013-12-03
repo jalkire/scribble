@@ -12,11 +12,15 @@
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface FacebookViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *loginlogout;
+- (IBAction)buttonClickHandler:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *textNoteOrLink;
+
 
 @end
 
 @implementation FacebookViewController
-- (IBAction)facebookSignIn:(id)sender
+
 {
     /*
     FBLoginView *loginView = [[FBLoginView alloc] init];
@@ -33,7 +37,6 @@
                                   }];
      */
 }
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -43,8 +46,7 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     

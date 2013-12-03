@@ -138,13 +138,20 @@
                         </prototypes>
                         <sections/>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Chatrooms" id="v54-P8-Lrx">
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="ysi-Sh-9yi">
+                            <connections>
+                                <action selector="logoutButton:" destination="Nia-8Z-Rdg" id="ZUH-MB-Eac"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="g7A-Yr-4Ls">
                             <connections>
                                 <segue destination="EL4-aE-BC2" kind="modal" id="Pa3-7J-iiG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qR5-nb-nlq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,7 +175,7 @@
         <!--Facebook View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="FacebookViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="facebook" id="vXZ-lx-hvc" customClass="FacebookViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ieP-xr-xTd"/>
                         <viewControllerLayoutGuide type="bottom" id="b5G-W0-eGG"/>
@@ -201,7 +208,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" image="FacebookSignUp2.png"/>
                                 <connections>
-                                    <action selector="facebookSignIn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xSY-U6-IBX"/>
+                                    <action selector="buttonClickHandler:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tzr-ef-ANt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already have an account?          " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4c-wo-jtv">
@@ -219,9 +226,19 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6gb-uB-7qi">
+                                <rect key="frame" x="73" y="398" width="139" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="loginlogout" destination="x6e-6P-xKV" id="2az-dD-QJx"/>
+                        <outlet property="textNoteOrLink" destination="6gb-uB-7qi" id="Q5J-Uh-hgJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
