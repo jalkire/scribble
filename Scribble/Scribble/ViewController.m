@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ColorChoiceViewController.h"
 #import "PathView.h"
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet PathView *pathView;
@@ -15,30 +16,9 @@
 
 @implementation ViewController
 
-/*- (IBAction)reset:(id)sender              //total erase of drawing screen
-
-{
-    for (UIBezierPath *path in self.pathView.oldpaths) {
-        [path removeAllPoints];
-    }
-    [self.pathView setNeedsDisplay];
-}
-*/
-
-- (IBAction)undo:(id)sender
-{
-
-    UIBezierPath *path  = [self.pathView.oldpaths lastObject];
-    [path removeAllPoints];
-    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.pathView.oldpaths];
-    [tempArray removeLastObject];
-    self.pathView.oldpaths = [NSArray arrayWithArray:tempArray];
-    [self.pathView setNeedsDisplay];
-   
-}
-
 - (IBAction)didPan:(UIPanGestureRecognizer *)sender
 {
+    
     CGPoint point = [sender locationInView:self.pathView];
     if (sender.state == UIGestureRecognizerStateBegan)
     {
@@ -56,6 +36,21 @@
     {
         [self.pathView endPoint:point];
     }
+}
+
+- (IBAction)undo:(id)sender
+{
+    
+    UIBezierPath *path  = [self.pathView.oldpaths lastObject];
+    [path removeAllPoints];
+    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.pathView.oldpaths];
+    NSMutableArray *tempColorArray = [NSMutableArray arrayWithArray:self.pathView.pathColors];
+    [tempArray removeLastObject];
+    [tempColorArray removeLastObject];
+    self.pathView.oldpaths = [NSArray arrayWithArray:tempArray];
+    self.pathView.pathColors = [NSArray arrayWithArray:tempColorArray];
+    [self.pathView setNeedsDisplay];
+    
 }
 
 - (IBAction)doneButtonTapped:(UIButton*)sender
@@ -76,7 +71,20 @@
     NSData *imageData = UIImagePNGRepresentation(image1);
     [self uploadImage:imageData :sender];
 }
+- (IBAction)cancelDrawing:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+/*
+- (IBAction)eraseButtonTapped:(UIButton*)sender
+{
+    self.pathView.penColor = [UIColor whiteColor];
+}*/
 
+- (IBAction)eraseButtonTapped:(id)sender
+{
+    self.pathView.penColor = [UIColor whiteColor];
+}
 
 - (void)uploadImage:(NSData *)imageData :(id)sender
 {
@@ -98,7 +106,7 @@
                 if (!error)
                 {
                  //   [self refresh:nil];
-                    [self performSegueWithIdentifier:@"dismissDrawView" sender:sender];
+                    //[self performSegueWithIdentifier:@"dismissDrawView" sender:sender];
                 }
                 else
                 {
@@ -108,6 +116,7 @@
 
         }
     }];
+    [self performSegueWithIdentifier:@"dismissDrawView" sender:sender];
 }
 
 
@@ -117,6 +126,19 @@
 {
     [super viewDidLoad];
     
+    self.pathView.penColor = [UIColor blueColor];
+    
+    /*TESTING PARSE STUFF*/
+    //PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    //[testObject setObject:@"bar" forKey:@"foo"];
+    //[testObject save];
+    
+/*  PFObject *person = [PFObject objectWithClassName:@"Person"];
+    person[@"Name"] = @"John";
+    person[@"Age"] = @21;
+    
+    [person saveInBackground];   */
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -124,6 +146,23 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"colorPicker"])
+    {
+        ColorChoiceViewController *colors = segue.destinationViewController;
+        
+        colors.penColor = self.pathView.penColor;
+    }
+}
+
+- (IBAction)unwindWithPenColor:(UIStoryboardSegue*)unwindSegue
+{
+    ColorChoiceViewController *colors = unwindSegue.sourceViewController;
+    
+    self.pathView.penColor = colors.penColor;
 }
 
 @end
