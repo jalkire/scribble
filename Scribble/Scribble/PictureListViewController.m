@@ -19,10 +19,19 @@
 
 @implementation PictureListViewController
 
+- (IBAction)editImage:(UITapGestureRecognizer *)sender
+{
+    [self performSegueWithIdentifier:@"ImageEditor" sender:sender.view];
+}
 
 - (IBAction)unwindAction:(UIStoryboardSegue*)unwindSegue
 {
     [self getPictures];
+}
+
+- (void)oneFingerTwoTaps
+{
+    NSLog(@"Action: One finger, two taps");
 }
 
 -(void)getPictures
@@ -83,6 +92,18 @@
 
         //add picture to uiview
         [PicturesListView addSubview:userPic];
+            
+            // Create gesture recognizer
+            UITapGestureRecognizer *oneFingerTwoTaps =
+            [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector (editImage:)];
+            
+            // Set required taps and number of touches
+            [oneFingerTwoTaps setNumberOfTapsRequired:2];
+            [oneFingerTwoTaps setNumberOfTouchesRequired:1];
+            
+            // Add the gesture to the view
+            [userPic addGestureRecognizer:oneFingerTwoTaps];
+            userPic.userInteractionEnabled = YES;
 
         //take the date and time that the picture was uploaded at
         NSDate *creationDate = drawingObject.createdAt;
