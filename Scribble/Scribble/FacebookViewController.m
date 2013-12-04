@@ -80,6 +80,56 @@
         [self.loginlogout setTitle:@"Log out" forState:UIControlStateNormal];
         [self.textNoteOrLink setText:[NSString stringWithFormat:@"https://graph.facebook.com/me/friends?access_token=%@",
                                       appDelegate.session.accessTokenData.accessToken]];
+        
+        [FBRequestConnection
+         startForMeWithCompletionHandler:^(FBRequestConnection *connection,
+                                           id<FBGraphUser> user,
+                                           NSError *error) {
+             if (!error) {
+                 NSString *userInfo = @"";
+                 NSString *username = @"";
+                 
+                 // Example: typed access (name)
+                 // - no special permissions required
+                 userInfo = [userInfo
+                             stringByAppendingString:
+                             [NSString stringWithFormat:@"%@",
+                              user.name]];
+                 
+                 username = [userInfo
+                             stringByAppendingString:
+                             [NSString stringWithFormat:@"%@",
+                              user.username]];
+                 NSLog(@"\n\nName: %@\n\nUsername: %@\n\n", user.name, user.username);
+                 
+                 PFUser *newUser = [PFUser user];
+                 newUser.username = userInfo;
+                 newUser.password = @"pass";
+                 //newUser.email = email;
+                 
+                 [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                     if (!error) {
+                         //    [self refresh:nil];
+                         NSLog(@"\n\nSuccessfully signed up facebook profile\n\n");
+                     } else {
+                         [PFUser logInWithUsername:userInfo password:@"pass"];
+                         NSLog(@"\n\nFailed to sign up facebook profile, attempting to login\n\n");
+                         // [self refresh:nil];
+                     }
+                 }];
+                 /*
+                  [PFUser currentUser];
+                  PFUser *user2 = [[PFUser alloc] init];
+                  user2.username = user.name;
+                  user2.password = @"pass";
+                  */
+                 [[PFUser currentUser] setUsername:user.name];
+                 NSLog(@"\n\n\n\n%@\n\n\n\n\n",userInfo);
+             }
+             
+             
+         }];
+        
         [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     } else {
         // login-needed account UI is shown whenever the session is closed
@@ -112,8 +162,9 @@
                                                          NSError *error) {
             // and here we make sure to update our UX according to the new session state
             [self updateView];
-        }];
-    }
+
+            }
+         ];}
 }
 
 - (void)viewDidUnload
@@ -133,6 +184,8 @@
         return YES;
     }
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {

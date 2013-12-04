@@ -186,8 +186,11 @@
 }
 
 - (IBAction)logoutButton:(id)sender {
-    AppDelegate *appDelegate;
+    AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     [appDelegate.session closeAndClearTokenInformation];
+    [self showLoginView];
+    
+    
     
 }
 @end
