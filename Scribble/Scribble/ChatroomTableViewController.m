@@ -112,8 +112,9 @@
     // See if the app has a valid token for the current state.
     
     
-    
-    if (![FBSession openActiveSessionWithReadPermissions:nil
+    if (![PFUser currentUser])
+    {
+        if (![FBSession openActiveSessionWithReadPermissions:nil
                                             allowLoginUI:NO
                                        completionHandler:^(FBSession *session,
                                                            FBSessionState state, NSError *error) {
@@ -124,6 +125,7 @@
                                            [self showLoginView];
                                            
                                        }
+    }
 }
 /*
 // Override to support conditional editing of the table view.
@@ -185,9 +187,21 @@
 
 }
 
-- (IBAction)logoutButton:(id)sender {
+- (IBAction)logoutButton:(id)sender
+{
     AppDelegate *appDelegate;
     [appDelegate.session closeAndClearTokenInformation];
-    
+    appDelegate.session = nil;
+    if ([PFUser currentUser])
+    {
+        [PFUser logOut];
+    }
+    //[appDelegate.session close];
+    while (appDelegate.session.isOpen)
+    {
+        [appDelegate.session close];
+        [appDelegate.session closeAndClearTokenInformation];
+    }
+    [self showLoginView];
 }
 @end

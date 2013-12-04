@@ -24,9 +24,9 @@
     NSString *password = self.passwordField.text;
     NSString *email = self.emailField.text;
     
-    ChatroomTableViewController *chatroomList = [[ChatroomTableViewController alloc]
-                                                 initWithNibName:nil
-                                                 bundle:nil];
+    //ChatroomTableViewController *chatroomList = [[ChatroomTableViewController alloc] init];
+                                                // initWithNibName:nil
+                                                // bundle:nil];
     
     PFUser *user = [PFUser user];
     user.username = username;
@@ -37,9 +37,14 @@
         if (!error) {
             //    [self refresh:nil];
             
-            [self presentViewController:(ChatroomTableViewController *) chatroomList
-                               animated:NO
-                             completion:nil];
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+            UINavigationController* chatroomList = [storyboard instantiateViewControllerWithIdentifier:@"chatroomsNav"];
+            
+            [self presentViewController:chatroomList animated:YES completion:nil];
+            
+            //[self presentViewController:(ChatroomTableViewController *) chatroomList
+            //                   animated:NO
+            //                 completion:nil];
         } else {
             [PFUser logInWithUsername:@"Zelda" password:@"password"];
             // [self refresh:nil];
