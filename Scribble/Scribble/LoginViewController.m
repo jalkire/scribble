@@ -11,6 +11,7 @@
 #import "Parse/Parse.h"
 
 @interface LoginViewController ()
+@property (strong, nonatomic) IBOutlet UIView *view;
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
@@ -38,6 +39,19 @@
     {
         NSLog(@"Login Failed. Try Again.\n");
     }
+}
+
+- (IBAction)cancel:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if ([self.usernameField isFirstResponder])
+        [self.usernameField resignFirstResponder];
+    else if ([self.passwordField isFirstResponder])
+        [self.passwordField resignFirstResponder];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

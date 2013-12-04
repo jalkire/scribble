@@ -14,9 +14,12 @@
 @end
 
 @implementation AddChatroomViewController
-- (IBAction)cancel:(id)sender {
+
+- (IBAction)cancel:(id)sender
+{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 - (IBAction)addChatroom:(id)sender {
     PFObject *chatroom = [PFObject objectWithClassName:@"Chatroom"];
     chatroom[@"Name"] = self.chatroomName.text;
@@ -32,6 +35,12 @@
              NSLog(@"Error: %@ %@", error, [error userInfo]);
          }
      }];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if ([self.chatroomName isFirstResponder])
+        [self.chatroomName resignFirstResponder];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

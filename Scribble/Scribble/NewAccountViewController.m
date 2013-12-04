@@ -51,12 +51,20 @@
         }
     }];
 }
-
-- (IBAction)hideKeyboard:(id)sender
+- (IBAction)cancel:(id)sender
 {
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if ([self.usernameField isFirstResponder])
+        [self.usernameField resignFirstResponder];
+    else if ([self.passwordField isFirstResponder])
+        [self.passwordField resignFirstResponder];
+    else if ([self.emailField isFirstResponder])
+        [self.emailField resignFirstResponder];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
