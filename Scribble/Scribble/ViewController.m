@@ -10,7 +10,8 @@
 #import "ColorChoiceViewController.h"
 #import "PathView.h"
 @interface ViewController ()
-@property (strong, nonatomic) IBOutlet PathView *pathView;
+//@property (strong, nonatomic) IBOutlet PathView *pathView;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundDisplay;
 
 @end
 
@@ -56,6 +57,7 @@
 - (IBAction)doneButtonTapped:(UIButton*)sender
 {
     UIGraphicsBeginImageContext(self.pathView.bounds.size);
+    [self.backgroundDisplay.layer renderInContext:UIGraphicsGetCurrentContext()];
     [self.pathView.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage* image1 = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -88,6 +90,7 @@
 
 - (void)uploadImage:(NSData *)imageData :(id)sender
 {
+    NSString *chatroom = self.chatroom;
     PFFile *imageFile = [PFFile fileWithName:@"Image.png" data:imageData];
     [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
     {
@@ -97,9 +100,12 @@
             [userPhoto setObject:imageFile forKey:@"imageFile"];
             
             PFUser *user = [PFUser currentUser];
+            if (user)
+            {
             [userPhoto setObject:user forKey:@"User"];
+            }
             
-            userPhoto[@"Chatroom"] = self.chatroom;
+            userPhoto[@"Chatroom"] = chatroom;
             
             [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
             {
@@ -141,7 +147,10 @@
     
 	// Do any additional setup after loading the view, typically from a nib.
 }
-
+- (void) viewDidAppear:(BOOL)animated
+{
+    self.backgroundDisplay.image = self.backgroundImage;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

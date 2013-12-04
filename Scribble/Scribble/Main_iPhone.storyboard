@@ -395,10 +395,19 @@
                         <viewControllerLayoutGuide type="top" id="IHR-2O-u5m"/>
                         <viewControllerLayoutGuide type="bottom" id="Xr3-Bg-3j7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ras-ah-RGQ" customClass="PathView">
+                    <view key="view" contentMode="scaleToFill" id="Ras-ah-RGQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tmf-w6-SPp">
+                                <rect key="frame" x="0.0" y="65" width="320" height="459"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ebs-B2-Lio" customClass="PathView">
+                                <rect key="frame" x="0.0" y="65" width="320" height="459"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kii-Qo-3Xk">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -440,7 +449,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="hXH-Hn-5L2"/>
                     <connections>
-                        <outlet property="pathView" destination="Ras-ah-RGQ" id="Cjt-bl-21G"/>
+                        <outlet property="backgroundDisplay" destination="tmf-w6-SPp" id="1J9-CU-YdL"/>
+                        <outlet property="pathView" destination="ebs-B2-Lio" id="bph-5q-dvR"/>
                         <segue destination="zwE-r4-RRY" kind="unwind" identifier="dismissDrawView" unwindAction="unwindAction:" id="f8n-hN-GSa"/>
                     </connections>
                 </viewController>

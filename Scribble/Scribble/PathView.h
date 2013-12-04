@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PathView : UIView
-
+@property (weak, nonatomic) IBOutlet UIImageView *PathViewBackground;
 @property UIBezierPath *path;
 @property NSArray *oldpaths;
 @property NSArray *pathColors;

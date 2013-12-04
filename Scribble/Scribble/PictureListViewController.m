@@ -9,11 +9,13 @@
 #import "PictureListViewController.h"
 #import "ViewController.h"
 #import "Parse/Parse.h"
+#import "PathView.h"
 
 @interface PictureListViewController ()
 
 @property NSArray *drawingObjectsArray;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property UIImage *image;
 
 @end
 
@@ -22,6 +24,8 @@
 - (IBAction)editImage:(UITapGestureRecognizer *)sender
 {
     [self performSegueWithIdentifier:@"ImageEditor" sender:sender.view];
+
+    
 }
 
 - (IBAction)unwindAction:(UIStoryboardSegue*)unwindSegue
@@ -104,6 +108,8 @@
             // Add the gesture to the view
             [userPic addGestureRecognizer:oneFingerTwoTaps];
             userPic.userInteractionEnabled = YES;
+            
+           
 
         //take the date and time that the picture was uploaded at
         NSDate *creationDate = drawingObject.createdAt;
@@ -246,6 +252,16 @@
         ViewController *drawView = segue.destinationViewController;
         
         drawView.chatroom = self.chatroom;
+    }
+    
+    else if ([segue.identifier isEqualToString:@"ImageEditor"])
+    {
+        ViewController *drawView = segue.destinationViewController;
+        UIImageView *imageview = sender;
+        drawView.chatroom = self.chatroom;
+        
+        drawView.backgroundImage = imageview.image;
+        //[drawView.pathView setBackgroundColor:[UIColor colorWithPatternImage:self.image]];
     }
 }
 - (IBAction)refreshed:(UIBarButtonItem *)sender {
