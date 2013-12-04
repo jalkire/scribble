@@ -189,9 +189,9 @@
 
 - (IBAction)logoutButton:(id)sender
 {
-    AppDelegate *appDelegate;
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];;
     [appDelegate.session closeAndClearTokenInformation];
-    appDelegate.session = nil;
+    //appDelegate.session = nil;
     if ([PFUser currentUser])
     {
         [PFUser logOut];

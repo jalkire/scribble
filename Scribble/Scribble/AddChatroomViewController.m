@@ -21,9 +21,12 @@
 }
 
 - (IBAction)addChatroom:(id)sender {
+    //create a chatroom object with name and user
     PFObject *chatroom = [PFObject objectWithClassName:@"Chatroom"];
     chatroom[@"Name"] = self.chatroomName.text;
+    [chatroom setObject:[PFUser currentUser] forKey:@"User"];
     
+    //save the chatroom object to Parse
     [chatroom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
      {
          if (!error)
@@ -37,11 +40,15 @@
      }];
 }
 
+//hide keyboard when background is touched
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if ([self.chatroomName isFirstResponder])
         [self.chatroomName resignFirstResponder];
 }
+
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
