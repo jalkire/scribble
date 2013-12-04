@@ -364,7 +364,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="scrollView" destination="V7s-Tc-XVz" id="ACz-B7-qmF"/>
-                        <segue destination="F61-v9-GLg" kind="push" identifier="ImageEditor" id="1vj-PE-1jE"/>
+                        <segue destination="F61-v9-GLg" kind="modal" identifier="ImageEditor" id="Qz2-we-4nO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YlK-8i-d1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -668,6 +668,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1vj-PE-1jE"/>
+        <segue reference="Qz2-we-4nO"/>
     </inferredMetricsTieBreakers>
 </document>
