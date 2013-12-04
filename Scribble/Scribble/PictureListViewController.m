@@ -80,11 +80,13 @@
         //and put it in a frame, reducing its size and centering
         UIImageView *userPic = [[UIImageView alloc] initWithImage:[UIImage imageWithData:pic.getData]];
         userPic.frame = CGRectMake(PicturesListView.frame.size.width/6, 30, PicturesListView.frame.size.width/1.5, userPic.frame.size.height/1.5);
-        //userPic.layer.shadowColor = [UIColor purpleColor].CGColor;
+
+        //put shadows around the photo
         userPic.layer.shadowOffset = CGSizeMake(0, 1);
         userPic.layer.shadowOpacity = .7;
         userPic.layer.shadowRadius = 1.0;
         userPic.clipsToBounds = NO;
+            
         //add picture to uiview
         [PicturesListView addSubview:userPic];
 
