@@ -94,11 +94,16 @@
         UIImageView *userPic = [[UIImageView alloc] initWithImage:[UIImage imageWithData:pic.getData]];
         userPic.frame = CGRectMake(PicturesListView.frame.size.width/6, 30, PicturesListView.frame.size.width/1.5, userPic.frame.size.height/1.5);
 
-        //put shadows around the photo
+        //put shadows under the photo
+        UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:userPic.bounds];
         userPic.layer.shadowOffset = CGSizeMake(0, 1);
-        userPic.layer.shadowOpacity = .7;
+        userPic.layer.shadowOpacity = .5;
+        userPic.layer.shadowColor = [UIColor groupTableViewBackgroundColor].CGColor;
         userPic.layer.shadowRadius = 1.0;
         userPic.clipsToBounds = NO;
+        userPic.layer.masksToBounds = NO;
+        userPic.layer.shadowPath = shadowPath.CGPath;
+
             
         //add picture to uiview
         [PicturesListView addSubview:userPic];
