@@ -11,4 +11,8 @@
 
 @interface ChatroomTableViewController : UITableViewController
 
+@property NSArray *facebookFriends;
+
+- (void)getParseChatrooms;
+
 @end

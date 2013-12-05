@@ -24,16 +24,67 @@
 {
     if (!error)
     {
-        self.chatrooms = chatrooms;
+        NSLog(@"%@", [self.facebookFriends firstObject]);
+        NSLog(@"\n\nPRINT SOMETHING\n\n");
+        
+        NSMutableArray *friendRooms = [[NSMutableArray alloc] init];
+        if (self.facebookFriends)
+        {
+            for (PFObject *room in chatrooms)
+            {
+                PFUser *user = room[@"User"];
+                //make sure the room actually has a user
+                if ([room[@"User"] fetchIfNeeded])
+                {
+                    for (NSString *name in self.facebookFriends)
+                    {
+                        //NSLog(@"\n%@\n%@\n", user.username, name);
+                        //NSLog(@"%hhd\n", [user.username isEqual:name]);
+                        if ([user.username isEqual:name])
+                        {
+                            //NSLog(@"This is getting run\n\n");
+                            [friendRooms addObject:room];
+                            break;
+                        }
+                    }
+                    [friendRooms addObject:room];
+                    //[friendRooms removeObject:room];
+                }
+            }
+        }
+        
+        NSLog(@"load rooms\nRooms: %lu\n\n", (unsigned long)friendRooms.count);
+        if (self.facebookFriends)
+        {
+            self.chatrooms = (NSArray *)friendRooms;
+        }
+        else
+        {
+            self.chatrooms = chatrooms;
+        }
         [self.tableView reloadData];
     }
 }
 
-- (IBAction)unwindAction:(UIStoryboardSegue*)unwindSegue
+- (void)getParseChatrooms
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Chatroom"];
     [query findObjectsInBackgroundWithTarget:self
                                     selector:@selector(refreshChatrooms:error:)];
+}
+
+- (IBAction)unwindAction:(UIStoryboardSegue*)unwindSegue
+{
+    [self getParseChatrooms];
+}
+
+- (IBAction)unwindWithFacebookFriends:(UIStoryboardSegue*)unwindSegue
+{
+    FacebookViewController *colors = unwindSegue.sourceViewController;
+    
+    self.facebookFriends = colors.facebookFriends;
+    
+    [self getParseChatrooms];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -47,19 +98,51 @@
 
 - (void)showLoginView
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    FacebookViewController* loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"facebook"];
+    //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    //FacebookViewController* loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"facebook"];
     
-    [self presentViewController:loginViewController animated:YES completion:nil];
+    [self performSegueWithIdentifier:@"presentSignIn" sender:self];
+    //[self presentViewController:loginViewController animated:YES completion:nil];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    PFQuery *query = [PFQuery queryWithClassName:@"Chatroom"];
-    [query findObjectsInBackgroundWithTarget:self
-                                    selector:@selector(refreshChatrooms:error:)];
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    if ([PFUser currentUser])
+    {
+        if (![appDelegate.session isOpen]) {
+        //if (![FBSession openActiveSessionWithReadPermissions:nil
+        //                                        allowLoginUI:NO
+        //                                   completionHandler:^(FBSession *session,
+        //                                                       FBSessionState state, NSError *error) {
+        //                                       NSLog(@"Error: %@", error);
+        //                                   }]) {
+                                               
+    NSLog(@"\nGet Facebook Friends\n");
+                                               
+    FBRequest* friendsRequest = [FBRequest requestForMyFriends];
+    [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
+                                                  NSDictionary* result,
+                                                  NSError *error) {
+        NSArray* friends = [result objectForKey:@"data"];
+        NSMutableArray *facebookFriends = [[NSMutableArray alloc] init];
+        
+        NSLog(@"Found: %lu friends", (unsigned long)friends.count);
+        
+        for (NSDictionary<FBGraphUser>* friend in friends) {
+            [facebookFriends addObject:friend.name];
+            //NSLog(@"I have a friend named %@ with id %@", friend.name, friend.id);
+        }
+        self.facebookFriends = facebookFriends;
+        NSLog(@"Total Friends: %lu", (unsigned long)self.facebookFriends.count);
+        NSLog(@"Friend 1: %@", self.facebookFriends.firstObject);
+    }];
+                                           }
+    }
+    
+    [self getParseChatrooms];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -99,7 +182,7 @@
     //NSString *chattitle = self.chatrooms[indexPath.row];
     
     cell.textLabel.text = chatroom[@"Name"];
-    cell.detailTextLabel.text = @"0 members";
+    //cell.detailTextLabel.text = @"0 members";
     
     return cell;
 }
@@ -126,6 +209,8 @@
                                            
                                        }
     }
+    
+    NSLog(@"Current User: %@", [[PFUser currentUser] username]);
 }
 /*
 // Override to support conditional editing of the table view.
@@ -189,7 +274,7 @@
 
 - (IBAction)logoutButton:(id)sender
 {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];;
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     [appDelegate.session closeAndClearTokenInformation];
     //appDelegate.session = nil;
     if ([PFUser currentUser])
@@ -199,7 +284,7 @@
     //[appDelegate.session close];
     while (appDelegate.session.isOpen)
     {
-        [appDelegate.session close];
+        //[appDelegate.session close];
         [appDelegate.session closeAndClearTokenInformation];
     }
     [self showLoginView];

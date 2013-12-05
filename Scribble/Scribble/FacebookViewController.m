@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginlogout;
 - (IBAction)buttonClickHandler:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *textNoteOrLink;
-
+//@property NSArray *facebookFriends;
 
 @end
 
@@ -87,8 +87,8 @@
                                       appDelegate.session.accessTokenData.accessToken]];
         
         //Dismiss the view
-        [self.presentingViewController dismissViewControllerAnimated:YES completion:^
-         {
+        //[self.presentingViewController dismissViewControllerAnimated:YES completion:^
+         //{
              //Get the username from the facebook account
              [FBRequestConnection
               startForMeWithCompletionHandler:^(FBRequestConnection *connection,
@@ -117,8 +117,8 @@
                       newUser.password = @"pass";
                       //newUser.email = email;
                       
-                      [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                          if (!error) {
+                      //[newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                          if ([newUser signUp]) {
                               //    [self refresh:nil];
                               NSLog(@"\n\nSuccessfully signed up facebook profile\n\n");
                           } else {
@@ -126,14 +126,49 @@
                               NSLog(@"\n\nFailed to sign up facebook profile, attempting to login\n\n");
                               // [self refresh:nil];
                           }
-                      }];
+                      //}];
                       
                       NSLog(@"\n\n\n\n%@\n\n\n\n\n",userInfo);
                   }
               }];
-         }];
+             
+             //Get a list of friends from their Facebook account
+             FBRequest* friendsRequest = [FBRequest requestForMyFriends];
+             [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
+                                                           NSDictionary* result,
+                                                           NSError *error) {
+                 NSArray* friends = [result objectForKey:@"data"];
+                 NSMutableArray *facebookFriends = [[NSMutableArray alloc] init];
+                 NSLog(@"Found: %lu friends", (unsigned long)friends.count);
+                 for (NSDictionary<FBGraphUser>* friend in friends) {
+                     [facebookFriends addObject:friend.name];
+                     //NSLog(@"I have a friend named %@ with id %@", friend.name, friend.id);
+                 }
+                 self.facebookFriends = facebookFriends;
+                 NSLog(@"Total Friends: %lu", (unsigned long)self.facebookFriends.count);
+                 NSLog(@"Friend 1: %@", self.facebookFriends.firstObject);
+                 //ChatroomTableViewController *presentingView = [[ChatroomTableViewController alloc] init];
+                 //presentingView.facebookFriends = facebookFriends;
+                 
+                 //refresh the chatrooms
+                 //[presentingView getParseChatrooms];
+                 //ChatroomTableViewController *chatrs = self.presentingViewController;
+                 //chatrs.facebookFriends = facebookFriends;
+                 //[chatrs getParseChatrooms];
+                 
+                 //ChatroomTableViewController *chats = [[ChatroomTableViewController alloc] initWithNibName:@"ChatroomTableViewController" bundle:nil];
+                 //chats.facebookFriends = facebookFriends;
+                 //[chats getParseChatrooms];
+             }];
+             //[self.presentingViewController refreshChatrooms];
+         //}];
         
-        //[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        
+        [self performSegueWithIdentifier:@"dismissSignIn" sender:self];
+        //[self.presentingViewController dismissViewControllerAnimated:YES completion:^
+        // {
+             
+        // }];
     } else {
         // login-needed account UI is shown whenever the session is closed
         [self.loginlogout setTitle:@"Log in" forState:UIControlStateNormal];
