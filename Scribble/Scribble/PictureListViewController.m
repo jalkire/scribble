@@ -30,7 +30,9 @@
 
 - (IBAction)unwindAction:(UIStoryboardSegue*)unwindSegue
 {
-    [self getPictures];
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(getPictures) userInfo:nil repeats:NO];
+
+    //[self getPictures];
 }
 
 - (void)oneFingerTwoTaps
@@ -138,11 +140,12 @@
         //get current user and user object associated with drawing
         PFUser *currentUser = [PFUser currentUser];
         PFUser *photoUser = [drawObject objectForKey:@"User"];
-        
+            NSString *one = photoUser.objectId;
+            NSString *two = currentUser.objectId;
         //if it is the current user's photo, move the stampts to the right corner
-        if (currentUser.objectId == photoUser.objectId){
-            nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-90, 0, PicturesListView.frame.size.width,15)];
-            timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-90, 13, PicturesListView.frame.size.width,15)];
+            if ([one isEqual:two]){
+            nameStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-130, 0, PicturesListView.frame.size.width,15)];
+            timeStamp = [[UILabel alloc] initWithFrame:CGRectMake(PicturesListView.frame.size.width-130, 13, PicturesListView.frame.size.width,15)];
         }
         //set stamps' text to have username and datetime
         nameStamp.text = [NSString stringWithFormat:@"%@", photoUser.username];

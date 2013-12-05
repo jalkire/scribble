@@ -99,7 +99,7 @@
     //NSString *chattitle = self.chatrooms[indexPath.row];
     
     cell.textLabel.text = chatroom[@"Name"];
-    cell.detailTextLabel.text = @"0 members";
+    //cell.detailTextLabel.text = @"0 members";
     
     return cell;
 }
